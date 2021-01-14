@@ -1,0 +1,35 @@
+.pub-article {
+    @apply mb-4;
+}
+
+.pub-authors {
+    @apply text-sm font-light;
+}
+
+.pub-journal {
+    @apply text-sm;
+}
+
+.pub-links {
+    @apply text-sm;
+}
+
+.pub-link {
+    @apply border-b border-solid border-transparent;
+}
+
+.pub-link:hover {
+    @apply border-default-color
+}
+
+.pub-link-doi {
+    @apply ml-4;
+}
+
+.pub-heading-link {
+    @apply text-default-blue border-b border-solid border-transparent;
+}
+
+.pub-heading-link:hover {
+    @apply border-default-blue
+}
