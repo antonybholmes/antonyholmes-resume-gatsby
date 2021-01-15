@@ -5,7 +5,7 @@ const TwoCol = ({ children }) => (
   <Row isVCentered={false}>
     <div
       className="bg-default-blue w-1/3 text-white"
-      style={{ minHeight: "11in" }}
+      style={{ minHeight: "11in", padding: "0.2in" }}
     >
       {children[0]}
     </div>

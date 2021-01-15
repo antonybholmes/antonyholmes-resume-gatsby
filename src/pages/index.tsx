@@ -12,6 +12,7 @@ import Job from "../components/job"
 import Bold from "../components/bold"
 import TwoCol from "../components/twocol"
 import Title from "../components/title"
+import SideTitle from "../components/sidetitle"
 
 type IndexProps = {
   data: any
@@ -70,13 +71,16 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
       <TwoCol>
         <>
           <h2
-            className="uppercase text-center mt-8"
+            className="uppercase text-center my-8"
             style={{ letterSpacing: "0.3rem" }}
           >
             Antony Holmes
           </h2>
 
-          <div className="text-justify" style={{ padding: "0.25in" }}>
+          <div
+            className="text-justify"
+            style={{ paddingLeft: "0.1in", paddingRight: "0.1in" }}
+          >
             <ul>
               <li>
                 Data scientist and full stack software developer with 8 years
@@ -95,22 +99,14 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </ul>
           </div>
 
-          <h5
-            className="uppercase font-normal bg-black-30 my-4 py-2"
-            style={{
-              paddingLeft: "0.25in",
-              paddingRight: "0.25in",
-            }}
-          >
-            Contact
-          </h5>
+          <SideTitle className="mt-8">Contact</SideTitle>
 
           <div
             className="mt-4"
-            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+            style={{ paddingLeft: "0.15in", paddingRight: "0.15in" }}
           >
             <Row>
-              <div className="w-8">
+              <div className="w-6">
                 <FontAwesomeIcon icon={["far", "envelope"]} size="lg" />
               </div>
               <div>
@@ -121,7 +117,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </Row>
 
             <Row className="mt-3">
-              <div className="w-8">
+              <div className="w-6">
                 <FontAwesomeIcon icon="phone" size="lg" />
               </div>
               <div>
@@ -132,7 +128,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </Row>
 
             <Row className="mt-3">
-              <div className="w-8">
+              <div className="w-6">
                 <FontAwesomeIcon icon={["fab", "github"]} size="lg" />
               </div>
               <div>
@@ -143,7 +139,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </Row>
 
             <Row className="mt-3">
-              <div className="w-8">
+              <div className="w-6">
                 <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg" />
               </div>
               <div>
@@ -161,15 +157,15 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             className="uppercase font-normal bg-black-30 mb-4 py-2"
             style={{
               marginTop: "0.4in",
-              paddingLeft: "0.25in",
-              paddingRight: "0.25in",
+              paddingLeft: "0.2in",
+              paddingRight: "0.2in",
             }}
           >
             Education
           </h6>
           <div
             className="mt-4"
-            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+            style={{ paddingLeft: "0.2in", paddingRight: "0.2in" }}
           >
             <p style={{ marginTop: "0.1in" }}></p>
 
@@ -203,7 +199,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </Row>
           </div> */}
         </>
-        <>
+        <div style={{ padding: "0.2in" }}>
           <Title>Experience</Title>
 
           <Job
@@ -309,25 +305,17 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
               </li>
             </ul>
           </Job>
-        </>
+        </div>
       </TwoCol>
     </Page>
 
     <Page>
       <TwoCol>
         <div>
-          <h5
-            className="uppercase font-normal bg-black-30 mb-4 py-2"
-            style={{
-              paddingLeft: "0.25in",
-              paddingRight: "0.25in",
-            }}
-          >
-            Education
-          </h5>
+          <SideTitle>Education</SideTitle>
           <div
             className="mt-4"
-            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+            style={{ paddingLeft: "0.15in", paddingRight: "0.15in" }}
           >
             <p style={{ marginTop: "0.1in" }}></p>
 
@@ -336,36 +324,36 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
                 <div className="uppercase font-semibold tracking-wide">
                   Ph.D Mathematical Biology
                 </div>
-                <p>2009, University of Warwick UK</p>
+                <div>2009, University of Warwick UK</div>
                 {/* <p className="italic">
                   Understanding morphogenesis in myxobacteria from a theoretical
                   and experimental perspective
                 </p> */}
-                <p>SIWN Best Paper Award</p>
+                <div>SIWN Best Paper Award</div>
               </div>
             </Row>
 
-            <Row className="mt-2">
+            <Row className="mt-4">
               <div>
                 <div className="uppercase font-semibold tracking-wide">
                   M.Sc Computer Science
                 </div>
-                <p>2004, University of Warwick UK</p>
+                <div>2004, University of Warwick UK</div>
               </div>
             </Row>
 
-            <Row className="mt-2">
+            <Row className="mt-4">
               <div>
                 <div className="uppercase font-semibold tracking-wide">
                   B.Sc Computer Science
                 </div>
-                <p>2003, University of Warwick UK</p>
-                <p>First-class honours</p>
+                <div>2003, University of Warwick UK</div>
+                <div>First-class honours</div>
               </div>
             </Row>
           </div>
         </div>
-        <>
+        <div style={{ padding: "0.2in" }}>
           <Title>Volunteer Work</Title>
 
           <Job
@@ -393,12 +381,12 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </ul>
           </Job>
 
-          <Title className="mt-8">Skills</Title>
+          <Title className="mt-6">Skills</Title>
 
           <Row
             isVCentered={false}
             className="mt-2"
-            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+            style={{ paddingLeft: "0.15in", paddingRight: "0.15in" }}
           >
             <div className="w-2/10 border-r border-solid border-blue-500 text-blue-500 font-semibold text-right pr-2 mr-2">
               Programming Languages
@@ -441,7 +429,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           <Row
             isVCentered={false}
             className="mt-4"
-            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+            style={{ paddingLeft: "0.15in", paddingRight: "0.15in" }}
           >
             <div className="w-2/10 border-r border-solid border-green-400 text-green-400 font-semibold text-right mr-2 pr-2">
               Software Development
@@ -478,7 +466,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           <Row
             isVCentered={false}
             className="mt-4"
-            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+            style={{ paddingLeft: "0.15in", paddingRight: "0.15in" }}
           >
             <div className="w-2/10 border-r border-solid border-red-400 text-red-400 font-semibold text-right mr-2 pr-2">
               Bioinformatics
@@ -502,8 +490,8 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           <p
             className="xs text-gray-500 mt-4"
             style={{
-              paddingLeft: "0.25in",
-              paddingRight: "0.25in",
+              paddingLeft: "0.2in",
+              paddingRight: "0.2in",
             }}
           >
             Source code for this resume is available at:{" "}
@@ -515,12 +503,12 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </ColorLink>
           </p>
 
-          <Title className="mt-8">References</Title>
+          <Title className="mt-6">References</Title>
 
           <Row
             wrap={true}
             className="mt-2"
-            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+            style={{ paddingLeft: "0.15in", paddingRight: "0.15in" }}
           >
             <div className="w-1/2 mb-4">
               <div className="font-semibold">Prof. Riccardo Dalla-Favera</div>
@@ -556,27 +544,23 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
               </div>
             </div>
           </Row>
-        </>
+        </div>
       </TwoCol>
     </Page>
 
     <Page>
-      {/* <Row isVCentered={false}>
-        <div
-          className="bg-gray-600 w-1/3 text-white"
-          style={{ padding: "0.25in" }}
-        ></div> */}
-
-      <Title>Publications</Title>
-      <div style={{ padding: "0.25in" }}>
-        <RecentPublications
-          publications={data.allPublications.edges[0].node.publications}
-          showAbstract={false}
-          showMoreButton={false}
-          showCount={false}
-          showIndices={true}
-          top={12}
-        />
+      <div style={{ padding: "0.2in" }}>
+        <Title>Publications</Title>
+        <div style={{ padding: "0.15in" }}>
+          <RecentPublications
+            publications={data.allPublications.edges[0].node.publications}
+            showAbstract={false}
+            showMoreButton={false}
+            showCount={false}
+            showIndices={true}
+            top={12}
+          />
+        </div>
       </div>
     </Page>
 
@@ -584,7 +568,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
       {/* <Row isVCentered={false}>
         <div
           className="bg-gray-600 w-1/3 text-white"
-          style={{ padding: "0.25in" }}
+          style={{ padding: "0.2in" }}
         ></div> */}
       <div style={{ margin: "0.4in" }}>
         <RecentPublications
@@ -603,7 +587,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
       {/* <Row isVCentered={false}>
         <div
           className="bg-gray-600 w-1/3 text-white"
-          style={{ padding: "0.25in" }}
+          style={{ padding: "0.2in" }}
         ></div> */}
       <div style={{ margin: "0.4in" }}>
         <RecentPublications
