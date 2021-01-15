@@ -18,7 +18,7 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      sans: ["Montserrat"],
+      sans: ["Inter"],
     },
     extend: {
       screens: {
@@ -281,7 +281,8 @@ module.exports = {
         "columbia-footer-80": "rgb(65, 81, 108, 0.8)",
         "columbia-footer-90": "rgb(65, 81, 108, 0.9)",
         "default-color": "rgb(20, 20, 20)",
-        "default-blue": "#003366",
+        "default-blue": "rgba(0, 51, 102)",
+        "default-blue-light": "rgba(0, 51, 102, 0.75)",
         "default-gray": colors.gray["500"],
         "default-white": "rgba(255, 255, 255, 0.98)",
       },

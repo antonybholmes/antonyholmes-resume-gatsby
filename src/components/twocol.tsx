@@ -9,9 +9,7 @@ const TwoCol = ({ children }) => (
     >
       {children[0]}
     </div>
-    <div className="w-2/3" style={{ padding: "0.25in" }}>
-      {children[1]}
-    </div>
+    <div className="w-2/3">{children[1]}</div>
   </Row>
 )
 

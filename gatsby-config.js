@@ -26,8 +26,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `cv`,
-        short_name: `cv`,
+        name: `resume`,
+        short_name: `resume`,
         start_url: `/`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },

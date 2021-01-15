@@ -76,34 +76,41 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             Antony Holmes
           </h2>
 
-          <div className="text-justify  mb-8" style={{ padding: "0.25in" }}>
-            Data scientist and full stack software developer with 8 years
-            experience developing open source software and applications for
-            cancer genetics research. Experienced in the full software
-            development life-cycle from requirement definition, prototyping,
-            design, interface implementation, and maintenance. Excellent written
-            and oral communication skills demonstrated by more than 24
-            publications and teaching courses on Unix/Linux and bioinformatics
-            to graduate students.
+          <div className="text-justify" style={{ padding: "0.25in" }}>
+            <ul>
+              <li>
+                Data scientist and full stack software developer with 8 years
+                experience developing open source software and applications for
+                cancer genetics research.
+              </li>
+              <li>
+                Experienced in the full software development life-cycle from
+                requirement definition, prototyping, design, interface
+                implementation, and maintenance.
+              </li>
+              <li>
+                Excellent written and oral communication skills demonstrated by
+                more than 25 publications.
+              </li>
+            </ul>
           </div>
 
-          <h6
-            className="uppercase font-normal bg-black-30 mb-4 py-2"
+          <h5
+            className="uppercase font-normal bg-black-30 my-4 py-2"
             style={{
-              marginTop: "0.4in",
               paddingLeft: "0.25in",
               paddingRight: "0.25in",
             }}
           >
             Contact
-          </h6>
+          </h5>
 
           <div
-            className="mt-4 font-semibold"
+            className="mt-4"
             style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
           >
             <Row>
-              <div className="pr-2">
+              <div className="w-8">
                 <FontAwesomeIcon icon={["far", "envelope"]} size="lg" />
               </div>
               <div>
@@ -113,8 +120,8 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
               </div>
             </Row>
 
-            <Row className="mt-2">
-              <div className="pr-2">
+            <Row className="mt-3">
+              <div className="w-8">
                 <FontAwesomeIcon icon="phone" size="lg" />
               </div>
               <div>
@@ -124,8 +131,8 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
               </div>
             </Row>
 
-            <Row className="mt-2">
-              <div className="pr-2">
+            <Row className="mt-3">
+              <div className="w-8">
                 <FontAwesomeIcon icon={["fab", "github"]} size="lg" />
               </div>
               <div>
@@ -135,8 +142,8 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
               </div>
             </Row>
 
-            <Row className="mt-2">
-              <div className="pr-2">
+            <Row className="mt-3">
+              <div className="w-8">
                 <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg" />
               </div>
               <div>
@@ -150,7 +157,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </Row>
           </div>
 
-          <h6
+          {/* <h6
             className="uppercase font-normal bg-black-30 mb-4 py-2"
             style={{
               marginTop: "0.4in",
@@ -168,21 +175,17 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
 
             <Row isVCentered={false}>
               <div>
-                <div className="uppercase font-semibold">
+                <div className="uppercase font-semibold tracking-wide">
                   Ph.D Mathematical Biology
                 </div>
                 <p>2009, University of Warwick UK</p>
-                {/* <p className="italic">
-                  Understanding morphogenesis in myxobacteria from a theoretical
-                  and experimental perspective
-                </p> */}
                 <p>SIWN Best Paper Award</p>
               </div>
             </Row>
 
             <Row className="mt-2">
               <div>
-                <div className="uppercase font-semibold">
+                <div className="uppercase font-semibold tracking-wide">
                   M.Sc Computer Science
                 </div>
                 <p>2004, University of Warwick UK</p>
@@ -191,14 +194,14 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
 
             <Row className="mt-2">
               <div>
-                <div className="uppercase font-semibold">
+                <div className="uppercase font-semibold tracking-wide">
                   B.Sc Computer Science
                 </div>
                 <p>2003, University of Warwick UK</p>
                 <p>First-class honours</p>
               </div>
             </Row>
-          </div>
+          </div> */}
         </>
         <>
           <Title>Experience</Title>
@@ -312,12 +315,61 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
 
     <Page>
       <TwoCol>
-        <></>
+        <div>
+          <h5
+            className="uppercase font-normal bg-black-30 mb-4 py-2"
+            style={{
+              paddingLeft: "0.25in",
+              paddingRight: "0.25in",
+            }}
+          >
+            Education
+          </h5>
+          <div
+            className="mt-4"
+            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+          >
+            <p style={{ marginTop: "0.1in" }}></p>
+
+            <Row isVCentered={false}>
+              <div>
+                <div className="uppercase font-semibold tracking-wide">
+                  Ph.D Mathematical Biology
+                </div>
+                <p>2009, University of Warwick UK</p>
+                {/* <p className="italic">
+                  Understanding morphogenesis in myxobacteria from a theoretical
+                  and experimental perspective
+                </p> */}
+                <p>SIWN Best Paper Award</p>
+              </div>
+            </Row>
+
+            <Row className="mt-2">
+              <div>
+                <div className="uppercase font-semibold tracking-wide">
+                  M.Sc Computer Science
+                </div>
+                <p>2004, University of Warwick UK</p>
+              </div>
+            </Row>
+
+            <Row className="mt-2">
+              <div>
+                <div className="uppercase font-semibold tracking-wide">
+                  B.Sc Computer Science
+                </div>
+                <p>2003, University of Warwick UK</p>
+                <p>First-class honours</p>
+              </div>
+            </Row>
+          </div>
+        </div>
         <>
           <Title>Volunteer Work</Title>
 
           <Job
-            date="2015-present"
+            date="2017-present"
             title="Tax Team Leader"
             place="New York Cares"
           >
@@ -343,37 +395,41 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
 
           <Title className="mt-8">Skills</Title>
 
-          <Row isVCentered={false} className="mt-2">
-            <div className="w-2/10 text-blue-400 border-r border-solid border-blue-400">
+          <Row
+            isVCentered={false}
+            className="mt-2"
+            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+          >
+            <div className="w-2/10 border-r border-solid border-blue-500 text-blue-500 font-semibold text-right pr-2 mr-2">
               Programming Languages
             </div>
             <div className="w-8/10">
               <table className="w-full" style={{ tableLayout: "fixed" }}>
                 <tr>
                   <td>
-                    <div className="text-blue-400 font-semibold">Java</div>
+                    <div className="text-blue-400">Java</div>
                     <div>Swing, JavaFX, Apache-Math, Spring Boot, Maven</div>
                   </td>
                   <td>
-                    <div className="text-blue-400 font-semibold">Python</div>
+                    <div className="text-blue-400">Python</div>
                     <div>Pandas, Numpy, Scikit-learn, Django</div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <div className="text-blue-400 font-semibold">Web</div>
+                    <div className="text-blue-400">Web</div>
                     <div>
                       Node, React, Electron, Gatsby, JSX, TypeScript, HTML/CSS
                     </div>
                   </td>
                   <td>
-                    <div className="text-blue-400 font-semibold">Databases</div>
+                    <div className="text-blue-400">Databases</div>
                     <div>PostgreSQL, MySQL, Sqlite</div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <div className="text-blue-400 font-semibold">Math</div>
+                    <div className="text-blue-400">Math</div>
                     <div>R, MATLAB</div>
                   </td>
                   <td></td>
@@ -382,33 +438,36 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </div>
           </Row>
 
-          <Row isVCentered={false} style={{ marginTop: "0.1in" }}>
-            <div className="w-2/10 text-green-400 border-r border-solid border-green-400">
+          <Row
+            isVCentered={false}
+            className="mt-4"
+            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+          >
+            <div className="w-2/10 border-r border-solid border-green-400 text-green-400 font-semibold text-right mr-2 pr-2">
               Software Development
             </div>
             <div className="w-8/10">
               <table className="w-full" style={{ tableLayout: "fixed" }}>
                 <tr>
                   <td>
-                    <div className="text-green-400 font-semibold">AWS</div>
+                    <div className="text-green-400">AWS</div>
                     <div>EC2, S3, Lambda, CloudFront, API Gateway</div>
                   </td>
                   <td>
-                    <div className="text-green-400 font-semibold">
-                      Development
-                    </div>
+                    <div className="text-green-400">Development</div>
                     <div>Eclipse, Visual Studio Code, Git</div>
                   </td>
                 </tr>
                 <tr>
                   <td>
-                    <div className="text-green-400 font-semibold">Cluster</div>
+                    <div className="text-green-400">Cluster</div>
                     <div>SGE, BSUB </div>
                   </td>
                   <td>
-                    <div className="text-green-400 font-semibold">Office</div>
+                    <div className="text-green-400">Office</div>
                     <div>
-                      Microsoft Office, LaTeX, Inkscape, Photoshop, Illustrator
+                      Microsoft Office with VBA, LaTeX, Inkscape, Photoshop,
+                      Illustrator
                     </div>
                   </td>
                 </tr>
@@ -416,19 +475,23 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </div>
           </Row>
 
-          <Row isVCentered={false} style={{ marginTop: "0.1in" }}>
-            <div className="w-2/10 text-red-400 border-r border-solid border-red-400">
+          <Row
+            isVCentered={false}
+            className="mt-4"
+            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+          >
+            <div className="w-2/10 border-r border-solid border-red-400 text-red-400 font-semibold text-right mr-2 pr-2">
               Bioinformatics
             </div>
             <div className="w-8/10">
               <table className="w-full" style={{ tableLayout: "fixed" }}>
                 <tr>
                   <td>
-                    <div className="text-red-400 font-semibold">Sequencing</div>
+                    <div className="text-red-400">Sequencing</div>
                     <div>Bowtie, Hisat2, STAR, ChIPseeqer, 10x Cell Ranger</div>
                   </td>
                   <td>
-                    <div className="text-red-400 font-semibold">Tools</div>
+                    <div className="text-red-400">Tools</div>
                     <div>GSEA, GenePattern, BLAST</div>
                   </td>
                 </tr>
@@ -436,7 +499,13 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
             </div>
           </Row>
 
-          <p className="xs text-gray-500 mt-4">
+          <p
+            className="xs text-gray-500 mt-4"
+            style={{
+              paddingLeft: "0.25in",
+              paddingRight: "0.25in",
+            }}
+          >
             Source code for this resume is available at:{" "}
             <ColorLink
               color="gray"
@@ -448,7 +517,11 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
 
           <Title className="mt-8">References</Title>
 
-          <Row wrap={true} className="mt-2">
+          <Row
+            wrap={true}
+            className="mt-2"
+            style={{ paddingLeft: "0.25in", paddingRight: "0.25in" }}
+          >
             <div className="w-1/2 mb-4">
               <div className="font-semibold">Prof. Riccardo Dalla-Favera</div>
               <div>Institute for Cancer Genetics</div>
@@ -493,8 +566,9 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => (
           className="bg-gray-600 w-1/3 text-white"
           style={{ padding: "0.25in" }}
         ></div> */}
-      <div style={{ margin: "0.25in" }}>
-        <Title>Publications</Title>
+
+      <Title>Publications</Title>
+      <div style={{ padding: "0.25in" }}>
         <RecentPublications
           publications={data.allPublications.edges[0].node.publications}
           showAbstract={false}
