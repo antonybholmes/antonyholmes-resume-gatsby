@@ -4,17 +4,16 @@ const puppeteer = require("puppeteer-core")
   const browser = await puppeteer.launch({
     headless: true,
     args: ["--no-sandbox"],
-    executablePath:
-      "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    executablePath: "/usr/bin/google-chrome",
   })
   const page = await browser.newPage()
   await page.goto("http://localhost:9000", { waitUntil: "networkidle0" })
-  await page.emulateMediaType("print")
+  await page.emulateMediaType("screen")
   await page.pdf({
     path: "antony_holmes_resume.pdf",
     format: "letter",
     printBackground: true,
-    margin: { top: 0, left: 0, bottom: 0, right: 0 },
+    margin: 0,
   })
   await browser.close()
 })()

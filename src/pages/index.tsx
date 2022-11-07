@@ -18,7 +18,7 @@ type IndexProps = {
   data: any
 }
 
-const IndexPage: React.FC<IndexProps> = ({ data }) => (
+const IndexPage = ({ data }) => (
   <Layout>
     {/* <SEO title="Home" /> */}
     <Page>

@@ -1,24 +1,13 @@
-const { colors } = require("tailwindcss/defaultTheme")
-
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
-  purge: {
-    content: [
+  content: [
       "./src/**/*.js",
       "./src/**/*.jsx",
       "./src/**/*.ts",
       "./src/**/*.tsx",
     ],
-    options: {
-      safelist: [/DayPicker/, /BrainhubCarousel/],
-    },
-  },
   theme: {
     fontFamily: {
-      sans: ["Inter"],
+      sans: ["Inter", "Helvetica", "Arial"],
     },
     extend: {
       screens: {
@@ -325,6 +314,5 @@ module.exports = {
       },
     },
   },
-  variants: {},
   plugins: [],
 }
