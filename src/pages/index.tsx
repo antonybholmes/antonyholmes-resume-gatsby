@@ -7,15 +7,12 @@ import Row from "../components/row"
 import BlueLink from "../components/bluelink"
 import BlackLink from "../components/link/black-link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import ColorLink from "../components/colorlink"
 import Job from "../components/job"
 import Bold from "../components/bold"
 import TwoCol from "../components/twocol"
-import SideTitle from "../components/sidetitle"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import TwinCol from "../components/twincol"
 
 const Title = ({ title }) => {
   return (
@@ -51,7 +48,7 @@ const IndexPage = ({ data }) => {
 
   let pages: any[] = []
 
-  let n = Math.floor(publications.length / 10) + 1
+  let n = Math.floor(publications.length / 11) + 1
 
   for (let i = 0; i < n; ++i) {
     pages.push(publications.slice(i * 10, i * 10 + 10))
@@ -65,9 +62,13 @@ const IndexPage = ({ data }) => {
           <>
             <h1 className="text-4xl text-center font-bold">Antony Holmes</h1>
 
-            <h1 className="text-lg text-center text-gray-500">
-              Software Engineer
-            </h1>
+            <Row isCentered={true} isVCentered={true} className="gap-x-4 mt-1">
+              <h2 className="text-lg text-gray-500">Data Scientist</h2>
+              <span className="rounded-full w-2 h-2 bg-gray-300" />
+              <h2 className="text-lg text-gray-500">Software Engineer</h2>
+              <span className="rounded-full w-2 h-2 bg-gray-300" />
+              <h2 className="text-lg text-gray-500">New York</h2>
+            </Row>
 
             <p className="mt-2">
               Data scientist and full stack software developer with 8 years
@@ -75,7 +76,7 @@ const IndexPage = ({ data }) => {
               cancer genetics research. Experienced in the full software
               development life-cycle from requirement definition, prototyping,
               design, interface implementation, and maintenance. Excellent
-              written and oral communication skills demonstrated by more than 25
+              written and oral communication skills demonstrated by 30
               publications.
             </p>
 
@@ -202,7 +203,7 @@ const IndexPage = ({ data }) => {
                       web site
                     </BlackLink>{" "}
                     using <Bold>Gatsby</Bold>+<Bold>Typescript</Bold> to ease
-                    deployment and updates to reduce costs by 80%.
+                    deployment and updates to reduce costs by <Bold>80%</Bold>.
                   </li>
                   {/* <li>
                 Data scientist designing pipelines for analyzing single cell,
@@ -320,6 +321,10 @@ const IndexPage = ({ data }) => {
                   </BlackLink>
                 </div>
               </Row>
+
+              <div className="text-gray-400">
+                This resume was developed with Node.js and React.
+              </div>
             </div>
 
             <div>
@@ -467,16 +472,11 @@ export const query = graphql`
           abstract
           authorList
           authors
-          peopleList
           journal
-          issue
-          pages
           volume
           year
           month
           day
-          url
-          tagList
         }
       }
     }
