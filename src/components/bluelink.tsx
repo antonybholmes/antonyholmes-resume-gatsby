@@ -1,31 +1,24 @@
 import React from "react"
+import ILinkProps from "../interfaces/link-props"
+import cn from "../lib/class-names"
 import ColorLink from "./colorlink"
+import BaseLink from "./link/base-link"
 
-type LinkProps = {
-  to: string
-  className?: string
-  activeClassName?: string
+interface IProps extends ILinkProps {
+  underline?: boolean
 }
 
-const BlueLink: React.FC<LinkProps> = ({
-  to,
+const BlueLink = ({
+  href,
   className,
-  activeClassName,
+  ariaLabel,
   children,
-}) => (
-  <ColorLink
-    color="blue"
-    to={to}
-    className={className}
-    activeClassName={activeClassName}
-  >
+}:IProps) => (
+  <BaseLink
+    href={href}
+    className={cn("text-blue-500", className)} ariaLabel={ariaLabel}  >
     {children}
-  </ColorLink>
+  </BaseLink>
 )
-
-BlueLink.defaultProps = {
-  className: "",
-  activeClassName: "",
-}
 
 export default BlueLink

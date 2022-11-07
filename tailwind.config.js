@@ -1,10 +1,10 @@
 module.exports = {
   content: [
-      "./src/**/*.js",
-      "./src/**/*.jsx",
-      "./src/**/*.ts",
-      "./src/**/*.tsx",
-    ],
+    "./src/**/*.js",
+    "./src/**/*.jsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ],
   theme: {
     fontFamily: {
       sans: ["Inter", "Helvetica", "Arial"],
@@ -272,7 +272,6 @@ module.exports = {
         "default-color": "rgb(20, 20, 20)",
         "default-blue": "rgba(0, 51, 102)",
         "default-blue-light": "rgba(0, 51, 102, 0.75)",
-        "default-gray": colors.gray["500"],
         "default-white": "rgba(255, 255, 255, 0.98)",
       },
       borderRadius: {

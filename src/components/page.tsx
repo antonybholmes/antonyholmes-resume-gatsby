@@ -1,5 +1,7 @@
 import React from "react"
+import IChildrenProps from "../interfaces/children-props"
+import cn from "../lib/class-names"
 
-const Page = ({ children }) => <div className="page">{children}</div>
+const Page = ({ className, style, children }:IChildrenProps) => <div className={cn("h-screen page", className)} style={style}>{children}</div>
 
 export default Page

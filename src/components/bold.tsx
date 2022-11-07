@@ -1,5 +1,5 @@
 import React from "react"
 
-const Bold = ({ children }) => <span className="font-semibold">{children}</span>
+const Bold = ({ children }) => <strong>{children}</strong>
 
 export default Bold

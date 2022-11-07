@@ -1113,6 +1113,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/poppins/-/poppins-4.5.10.tgz#44dbfeacb5d89efca5ad7ad6cc941b2ac1ee424b"
   integrity sha512-oYZVHsnlwV3VWM1SE/m6SUxVh0QLk5+2wB+lBiXcI7N/0KVQWmV9YykaPqfJHBLvmdya+MAOnv+BQHeLU1vOOw==
 
+"@fontsource/quicksand@^4.5.11":
+  version "4.5.11"
+  resolved "https://registry.yarnpkg.com/@fontsource/quicksand/-/quicksand-4.5.11.tgz#2865b0b2f1e82eaaaf94df881d7b0538ef11b5c7"
+  integrity sha512-SdgbixomUPBMjv+QZH72XsyJMY/P/XzEEFl7KCop+lAuBfy1fiqX+RyMheHhdNfR6Uk8MJla0iyb1ngcJXD0gw==
+
 "@fortawesome/fontawesome-common-types@6.2.0":
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.2.0.tgz#76467a94aa888aeb22aafa43eb6ff889df3a5a7f"

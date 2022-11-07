@@ -1,9 +1,7 @@
-import React from "react"
+import React, { ReactNode } from "react"
+import cn from "../lib/class-names"
 
 type RowProps = {
-  w?: string
-  size?: string
-  isMobile?: boolean
   isCentered?: boolean
   isVCentered?: boolean
   wrap?: boolean
@@ -12,55 +10,38 @@ type RowProps = {
   style?: any
   onMouseEnter?: any
   onMouseLeave?: any
+  children?: ReactNode
 }
 
-const Row: React.FC<RowProps> = React.forwardRef(
-  (
-    {
-      w,
-      size,
-      isCentered,
-      isVCentered,
-      wrap,
-      onClick,
-      className,
-      style,
-      onMouseEnter,
-      onMouseLeave,
-      children,
-    },
-    ref?: any
-  ) => {
-    const baseClass = `flex flex-row ${w !== "" ? `w-full ${size}:${w}` : ""} ${
-      isCentered ? "justify-center" : ""
-    } ${isVCentered ? "items-center" : ""} ${wrap ? "flex-wrap" : ""}`
+const Row = ({
+  isCentered = false,
+  isVCentered = false,
+  wrap = false,
+  onClick,
+  className,
+  style,
+  onMouseEnter,
+  onMouseLeave,
+  children,
+}: RowProps) => {
+  const baseClass = cn(
+    `flex flex-row`,
+    [isCentered, "justify-center"],
+    [isVCentered, "items-center"],
+    [wrap, "flex-wrap"]
+  )
 
-    return (
-      <div
-        className={`${baseClass} ${className}`}
-        style={style}
-        onClick={onClick}
-        onMouseEnter={onMouseEnter}
-        onMouseLeave={onMouseLeave}
-        ref={ref}
-      >
-        {children}
-      </div>
-    )
-  }
-)
-
-Row.defaultProps = {
-  w: "",
-  size: "md",
-  className: "",
-  style: null,
-  isMobile: false,
-  isCentered: false,
-  isVCentered: true,
-  wrap: false,
-  onMouseEnter: null,
-  onMouseLeave: null,
+  return (
+    <div
+      className={`${baseClass} ${className}`}
+      style={style}
+      onClick={onClick}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {children}
+    </div>
+  )
 }
 
 export default Row

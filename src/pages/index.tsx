@@ -5,14 +5,42 @@ import Layout from "../components/layout"
 import Page from "../components/page"
 import Row from "../components/row"
 import BlueLink from "../components/bluelink"
-import WhiteLink from "../components/whitelink"
+import BlackLink from "../components/link/black-link"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import ColorLink from "../components/colorlink"
 import Job from "../components/job"
 import Bold from "../components/bold"
 import TwoCol from "../components/twocol"
-import Title from "../components/title"
 import SideTitle from "../components/sidetitle"
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
+import { faPhone } from "@fortawesome/free-solid-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import TwinCol from "../components/twincol"
+
+const Title = ({ title }) => {
+  return (
+    <svg viewBox="0 0 180 30" className="w-40 mb-1">
+      <defs>
+        <linearGradient
+          id="rainbow"
+          x1="0"
+          x2="100%"
+          y1="0"
+          y2="0"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#f43f5e" offset="0%" />
+          <stop stop-color="#2563eb" offset="100%" />
+        </linearGradient>
+      </defs>
+      <text fill="url(#rainbow)">
+        <tspan x="0" y="20" className="text-xl font-bold uppercase">
+          {title}
+        </tspan>
+      </text>
+    </svg>
+  )
+}
 
 type IndexProps = {
   data: any
@@ -21,291 +49,388 @@ type IndexProps = {
 const IndexPage = ({ data }) => (
   <Layout>
     {/* <SEO title="Home" /> */}
-    <Page>
-      {/* <div className="bg-gray-400 text-white" style={{padding: "0.4in"}}>
-      <Row isCentered={true}>
-        <h2 className="uppercase font-semibold" style={{ letterSpacing: "1rem", fontFamily: "Poppins"}}>
-          Antony Holmes
-        </h2>
-      </Row>
-
-      <Row isCentered={true} className="mt-2">
-       <div className="tracking-wide uppercase">
-          347 688 5690
-        </div>
-      </Row> */}
-
-      {/* <Row isCentered={true} className="m-6 justify-between text-xs">
-        <div>
-          <BlueLink to="mailto:antony@antonyholmes.com">
-            antony@antonyholmes.com
-          </BlueLink>
-        </div>
-        <div>
-          <BlueLink to="https://www.linkedin.com/in/antonybholmes">
-            linkedin.com/in/antonybholmes
-          </BlueLink>
-        </div>
-        <div>
-          <BlueLink to="https://github.com/antonybholmes">
-            github.com/antonybholmes
-          </BlueLink>
-        </div>
-      </Row> */}
-
-      {/* <Row isCentered={true} className="mt-4">
-      
-
-        <div className="w-3/4 text-justify">
-          Data scientist and full stack software developer with 8 years
-          experience developing open source software and applications for cancer
-          genetics research. Experienced in the full software development
-          life-cycle from requirement definition, prototyping, design, interface
-          implementation, and maintenance. Excellent written and oral
-          communication skills demonstrated by more than 24 publications and
-          teaching courses on Unix/Linux and bioinformatics to graduate
-          students.
-        </div>
-      </Row> */}
-
-      <TwoCol>
+    <Page> {/*style={{background: "url( /waves.svg ) no-repeat top center", backgroundSize: '100% auto'}}>*/}
+      <div className="pt-8 px-8">
         <>
-          <h2
-            className="uppercase text-center my-8"
-            style={{ letterSpacing: "0.3rem" }}
-          >
-            Antony Holmes
-          </h2>
+          <h1 className="text-4xl font-bold">Antony Holmes</h1>
 
-          <div
-            className="text-justify"
-            style={{ paddingLeft: "0.1in", paddingRight: "0.1in" }}
-          >
-            <ul>
-              <li>
-                Data scientist and full stack software developer with 8 years
-                experience developing open source software and applications for
-                cancer genetics research.
-              </li>
-              <li>
-                Experienced in the full software development life-cycle from
-                requirement definition, prototyping, design, interface
-                implementation, and maintenance.
-              </li>
-              <li>
-                Excellent written and oral communication skills demonstrated by
-                more than 25 publications.
-              </li>
-            </ul>
-          </div>
+          <h1 className="text-lg text-gray-500">Software Engineer</h1>
 
-          <SideTitle className="mt-8">Contact</SideTitle>
+          <p className="mt-2">
+            Data scientist and full stack software developer with 8 years
+            experience developing open source software and applications for
+            cancer genetics research. Experienced in the full software
+            development life-cycle from requirement definition, prototyping,
+            design, interface implementation, and maintenance. Excellent written
+            and oral communication skills demonstrated by more than 25
+            publications.
+          </p>
 
-          <div
-            className="mt-4"
-            style={{ paddingLeft: "0.15in", paddingRight: "0.15in" }}
-          >
-            <Row>
-              <div className="w-6">
-                <FontAwesomeIcon icon={["far", "envelope"]} size="lg" />
-              </div>
+          {/* <Row className="mt-2 gap-x-8" isCentered={true} isVCentered={true}>
+            <Row className="gap-x-1 border border-gray-900 rounded-full px-4 py-2  ">
+              <FontAwesomeIcon icon={faEnvelope} size="lg" />
+
               <div>
-                <ColorLink color="white" to="mailto:antony@antonyholmes.com">
-                  antony@antonyholmes.com
-                </ColorLink>
+                <BlackLink href="mailto:hello@antonyholmes.dev" ariaLabel={""}>
+                  hello@antonyholmes.dev
+                </BlackLink>
               </div>
             </Row>
 
-            <Row className="mt-3">
-              <div className="w-6">
-                <FontAwesomeIcon icon="phone" size="lg" />
-              </div>
+            <Row className="gap-x-1 text-gray-600">
+              <FontAwesomeIcon icon={faPhone} size="lg" />
+
               <div>
-                <ColorLink color="white" to="tel:3476885690">
+                <BlackLink href="tel:3476885690" ariaLabel={""}>
                   (347) 688-5690
-                </ColorLink>
+                </BlackLink>
               </div>
             </Row>
 
-            <Row className="mt-3">
-              <div className="w-6">
-                <FontAwesomeIcon icon={["fab", "github"]} size="lg" />
-              </div>
-              <div>
-                <ColorLink color="white" to="https://github.com/antonybholmes">
-                  github.com/antonybholmes
-                </ColorLink>
-              </div>
-            </Row>
+            <Row className="gap-x-1 text-gray-600">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
 
-            <Row className="mt-3">
-              <div className="w-6">
-                <FontAwesomeIcon icon={["fab", "linkedin"]} size="lg" />
-              </div>
               <div>
-                <ColorLink
-                  color="white"
-                  to="https://www.linkedin.com/in/antonybholmes"
+                <BlackLink
+                  href="https://github.com/antonybholmes"
+                  ariaLabel={""}
                 >
-                  linkedin.com/in/antonybholmes
-                </ColorLink>
+                  github.com/antonybholmes
+                </BlackLink>
               </div>
             </Row>
+          </Row> */}
+        </>
+      </div>
+
+      <TwoCol className="mt-8">
+        <div className="flex flex-col gap-y-6">
+
+        <div>
+            <Title title="Skills" />
+
+            <div className="font-semibold">Programming Languages</div>
+            <div className="grid grid-cols-4 gap-2">
+              <div>
+                <div className="font-semibold text-gray-500">Java</div>
+                <div>Swing, Spring Boot, Maven</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-500">Python</div>
+                <div>Pandas, Numpy, Scikit-learn, Django</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-500">Web</div>
+                <div>React, Electron, Gatsby, NextJS, TypeScript</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-500">Databases</div>
+                <div>PostgreSQL, MySQL, Sqlite</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-500">Math</div>
+                <div>R, MATLAB</div>
+              </div>
+            </div>
+
+            <div className="font-semibold mt-4">Software Development</div>
+            <div className="grid grid-cols-4 gap-2">
+              <div>
+                <div className="font-semibold text-gray-500">AWS</div>
+                <div>EC2, S3, Lambda, CloudFront, API Gateway</div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-500">Development</div>
+                <div>Visual Studio Code, Eclipse, GitHub</div>
+              </div>
+
+              <div>
+                <div className="font-semibold text-gray-500">Cluster</div>
+                <div>SGE, BSUB </div>
+              </div>
+              <div>
+                <div className="font-semibold text-gray-500">Office</div>
+                <div>
+                  Microsoft Office with VBA, LaTeX, Inkscape, Photoshop,
+                  Illustrator
+                </div>
+              </div>
+            </div>
           </div>
 
-          {/* <h6
-            className="uppercase font-normal bg-black-30 mb-4 py-2"
-            style={{
-              marginTop: "0.4in",
-              paddingLeft: "0.2in",
-              paddingRight: "0.2in",
-            }}
-          >
-            Education
-          </h6>
-          <div
-            className="mt-4"
-            style={{ paddingLeft: "0.2in", paddingRight: "0.2in" }}
-          >
-            <p style={{ marginTop: "0.1in" }}></p>
+          <div>
+            <Title title="Work History" />
 
-            <Row isVCentered={false}>
-              <div>
-                <div className="uppercase font-semibold tracking-wide">
-                  Ph.D Mathematical Biology
-                </div>
-                <p>2009, University of Warwick UK</p>
-                <p>SIWN Best Paper Award</p>
-              </div>
-            </Row>
-
-            <Row className="mt-2">
-              <div>
-                <div className="uppercase font-semibold tracking-wide">
-                  M.Sc Computer Science
-                </div>
-                <p>2004, University of Warwick UK</p>
-              </div>
-            </Row>
-
-            <Row className="mt-2">
-              <div>
-                <div className="uppercase font-semibold tracking-wide">
-                  B.Sc Computer Science
-                </div>
-                <p>2003, University of Warwick UK</p>
-                <p>First-class honours</p>
-              </div>
-            </Row>
-          </div> */}
-        </>
-        <div style={{ padding: "0.2in" }}>
-          <Title>Experience</Title>
-
-          <Job
-            date="2015-present"
-            title="Senior Bioinformatics Developer"
-            place="Columbia University"
-          >
-            <ul>
-              <li>
-                Full stack systems engineer with expertize developing web based
-                genomics tools and databases using Java, Python, and Javascript.
-              </li>
-              <li>
-                Migrated lab data and core applications onto AWS cloud
-                infrastructure using a mixture EC2, S3, and RDS services
-                reducing costs by 90%.
-              </li>
-              <li>
-                Created a new Institute for Cancer Genetics department{" "}
-                <BlueLink to="https://wwww.columbiaicg.org">web site</BlueLink>{" "}
-                within a budgeted 6 month timeframe using a static site single
-                page application written in <Bold>React</Bold>+<Bold>JSX</Bold>{" "}
-                to implement modern web standards, ease deployment and updates,
-                and reduce costs by 80%.
-              </li>
-              {/* <li>
+            <Job
+              date="2015 - Present"
+              title="Senior Bioinformatics Developer"
+              place="Columbia University"
+            >
+              <ul className="list-disc ml-5 flex flex-col gap-y-1">
+                {/* <li>
+                  Developed web
+                  based genomics tools and databases using Java, Python, and
+                  Javascript.
+                </li> */}
+                <li>
+                  Migrated core genomic applications onto AWS cloud
+                  infrastructure using <Bold>EC2</Bold>, <Bold>Docker</Bold>,{" "}
+                  <Bold>S3</Bold> reducing costs by <Bold>90%</Bold>.
+                </li>
+                <li>
+                  Created Institute for Cancer Genetics departmental{" "}
+                  <BlackLink href="https://wwww.columbiaicg.org" ariaLabel={""}>
+                    web site
+                  </BlackLink>{" "}
+                  using <Bold>Gatsby</Bold>+<Bold>Typescript</Bold> to implement
+                  modern web standards, ease deployment and updates, and reduce
+                  costs by 80%.
+                </li>
+                {/* <li>
                 Data scientist designing pipelines for analyzing single cell,
                 ChIP-seq, and RNA-seq data.
               </li> */}
 
-              <li>
-                Developed multi-user database genomic web applications running
-                on AWS using Django, API Gateway, and Postgresql to allow users
-                remote access to core lab data and analysis to improve
-                productivity.
-              </li>
-              {/* <li>
+                <li>
+                  Developed multi-user database genomic web applications running
+                  on AWS using <Bold>Django</Bold>, and <Bold>Postgresql</Bold>{" "}
+                  to allow users remote access to core lab data and analysis to
+                  improve productivity.
+                </li>
+                {/* <li>
                 Ported applications into Node + Electron + React JS framework
                 for improved UI and integration with web services.
               </li> */}
-            </ul>
-          </Job>
+              </ul>
+            </Job>
 
+            <Job
+              date="2012 - 2015"
+              title="Associate Research Scientist"
+              place="Columbia University"
+            >
+              <ul className="list-disc ml-5 flex flex-col gap-y-1">
+                {/* <li>
+                  Analzed and developed microarray, SNP 6.0, RNA-seq,
+                  Chip-seq, and single cell genomic data next generation
+                  sequencing tools.
+                </li> */}
+                <li>
+                  Developed cluster based data pipelines using{" "}
+                  <Bold>Python</Bold>, <Bold>R</Bold>, and <Bold>BASH</Bold> to
+                  analyze microarray, SNP 6.0, RNA-seq, Chip-seq, and single
+                  cell genomic data that reduced processing time from days/weeks
+                  to <Bold>hours</Bold>.
+                </li>
+                <li>
+                  Created Java desktop applications for scientists to analyse
+                  data on their own available on{" "}
+                  <BlackLink
+                    href="https://github.com/antonybholmes/matcalc"
+                    ariaLabel={""}
+                  >
+                    GitHub
+                  </BlackLink>
+                  .
+                </li>
+                <li>
+                  Published over <Bold>25</Bold> articles on B-cell development
+                  and cancer genetics in high impact journals, including Nature,
+                  Cell, Blood, PNAS, and the New England Journal of Medicine.
+                </li>
+              </ul>
+            </Job>
+
+            <Job
+              date="2009 - 2012"
+              title="Post Doctoral Research Scientist"
+              place="Columbia University"
+            >
+              <ul className="list-disc ml-5 flex flex-col gap-y-1">
+                {/* <li>
+                  Data mined electronic health records (EHR) at New York
+                  Presbyterian Hospital.
+                </li> */}
+                <li>
+                  Served as database administrator and created research version
+                  of the New York Presbyterian Hospital electronic health
+                  records (EHR) for data mining.
+                </li>
+                <li>
+                  Studied patterns of influenza to look for predictive power in
+                  hospital records for New York public health.
+                </li>
+                <li>
+                  Discovered novel relationships between rare diseases and
+                  co-morbidities which were developed into <Bold>MATLAB</Bold>{" "}
+                  and <Bold>Java</Bold> applications to offer potential avenues
+                  for new therapeutics. This work resulted in three
+                  publications.
+                </li>
+              </ul>
+            </Job>
+          </div>
+
+          
+        </div>
+        <div className="flex flex-col gap-y-6">
+          <div className="flex flex-col mt-2 gap-y-2 border border-gray-300 rounded-2xl px-6 py-4">
+            <Row className="gap-x-2  text-blue-500">
+              <FontAwesomeIcon icon={faEnvelope} size="lg" />
+
+              <div>
+                <BlackLink href="mailto:hello@antonyholmes.dev" ariaLabel={""}>
+                  hello@antonyholmes.dev
+                </BlackLink>
+              </div>
+            </Row>
+
+            <Row className="gap-x-2">
+              <FontAwesomeIcon icon={faPhone} size="lg" />
+
+              <div>
+                <BlackLink href="tel:3476885690" ariaLabel={""}>
+                  (347) 688-5690
+                </BlackLink>
+              </div>
+            </Row>
+
+            <Row className="gap-x-2 ">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+
+              <div>
+                <BlackLink
+                  href="https://github.com/antonybholmes"
+                  ariaLabel={""}
+                >
+                  github.com/antonybholmes
+                </BlackLink>
+              </div>
+            </Row>
+          </div>
+
+          <div>
+            <Title title="Education" />
+
+            <div>
+              <div className="font-bold">Ph.D Mathematical Biology</div>
+              <div>University of Warwick UK</div>
+            </div>
+
+            {/* <div className="mt-2">
+              <div className="font-bold">M.Sc Computer Science</div>
+              <div>University of Warwick UK</div>
+            </div> */}
+
+            <div className="mt-2">
+              <div className="font-bold">B.Sc Computer Science</div>
+              <div>University of Warwick UK</div>
+              <div>First-class honours</div>
+            </div>
+          </div>
+
+          <div>
+            <Title title="Awards" />
+
+            <div className="font-bold">SIWN Best Paper Award</div>
+            <div>2009, Leipzig</div>
+          </div>
+
+          <div>
+            <Title title="Volunteering" />
+
+            <Job
+              date="2017 - Present"
+              title="Tax Team Leader"
+              place="New York Cares"
+            >
+              <ul className="list-disc ml-5 flex flex-col gap-y-1">
+                <li>
+                  Certified as IRS tax preparer to help New Yorkers file tax
+                  returns for free during tax season.
+                </li>
+                <li>
+                  Work with clients one-on-one to understand their tax situation
+                  and prepare their federal and state returns.
+                </li>
+                <li>
+                  Manage a small team of volunteers as liaison between
+                  New York Cares and partner organizations.
+                </li>
+                {/* <li>Quality review tax returns for accuracy before filing.</li> */}
+                <li>
+                  Save clients <Bold>$100,000</Bold> in fees per year.
+                </li>
+              </ul>
+            </Job>
+          </div>
+        </div>
+      </TwoCol>
+
+      <TwoCol className="mt-8">
+        <Title title="Volunteering" />
+
+        <div>
           <Job
-            date="2012-2015"
-            title="Associate Research Scientist"
-            place="Columbia University"
+            date="2017 - Present"
+            title="Tax Team Leader"
+            place="New York Cares"
           >
             <ul>
               <li>
-                Developed expertise in analyzing microarray, SNP 6.0, RNA-seq,
-                Chip-seq, and single cell genomic data using next generation
-                sequencing tools.
+                IRS certified tax preparer helping New Yorkers file their tax
+                returns for free during tax season.
               </li>
               <li>
-                Developed cluster based data pipelines using <Bold>Python</Bold>
-                , <Bold>R</Bold>, and <Bold>BASH</Bold> to run next generation
-                sequencing and big data analysis that reduced analysis time from
-                days to hours.
+                Work with clients one-on-one to understand their tax situation
+                and prepare their federal and state returns.
               </li>
               <li>
-                Core <Bold>Java</Bold> developer creating desktop applications
-                empower scientists to analyse data on their own. The
-                applications are available as an open source suite of
-                specialized genomics tools on{" "}
-                <BlueLink to="https://github.com/antonybholmes/matcalc">
-                  GitHub
-                </BlueLink>
-                .
+                Save clients <Bold>$30,000</Bold> in fees per year.
               </li>
               <li>
-                Published over <Bold>25</Bold> articles on B-cell development
-                and genetic lesions associated with development in high impact
-                journals, including Nature, Cell, Blood, and the New England
-                Journal of Medicine.
+                Manage a small team of volunteers and act as a liaison between
+                New York Cares and partner organizations.
               </li>
-            </ul>
-          </Job>
-
-          <Job
-            date="2009-2012"
-            title="Post Doctoral Research Scientist"
-            place="Columbia University"
-          >
-            <ul>
-              <li>
-                Data mining electronic health records (EHR) at New York
-                Presbyterian Hospital.
-              </li>
-              <li>
-                Onboarded as database administrator to create a research version
-                of the hospital EHR system for multi-user access to researchers.
-              </li>
-              <li>
-                Studied patterns of influenza to look for predictive power in
-                hospital records for New York public health.
-              </li>
-              <li>
-                Discovered novel relationships between rare diseases and
-                co-morbidities which were developed into <Bold>MATLAB</Bold> and{" "}
-                <Bold>Java</Bold> applications to offer potential avenues for
-                new therapeutics. This work resulted in three publications.
-              </li>
+              <li>Quality review tax returns for accuracy before filing.</li>
             </ul>
           </Job>
         </div>
+      </TwoCol>
+
+      <TwoCol className="mt-8">
+        <h2 className="uppercase text-right bg-sky-400 py-1 px-4 text-white">
+          Education
+        </h2>
+        <TwinCol>
+          <>
+            <div className="mb-4">
+              <div className="font-bold">Ph.D Mathematical Biology</div>
+              <div>2009, University of Warwick UK</div>
+              {/* <p className="italic">
+                  Understanding morphogenesis in myxobacteria from a theoretical
+                  and experimental perspective
+                </p> */}
+              <div>SIWN Best Paper Award</div>
+            </div>
+
+            <div>
+              <div className="uppercase font-semibold tracking-wide">
+                M.Sc Computer Science
+              </div>
+              <div>2004, University of Warwick UK</div>
+            </div>
+          </>
+          <>
+            <div>
+              <div className="uppercase font-semibold tracking-wide">
+                B.Sc Computer Science
+              </div>
+              <div>2003, University of Warwick UK</div>
+              <div>First-class honours</div>
+            </div>
+          </>
+        </TwinCol>
       </TwoCol>
     </Page>
 
