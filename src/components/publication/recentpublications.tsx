@@ -28,7 +28,7 @@ type RecentPublicationsProps = {
   recordsPerPage?: any
 }
 
-const RecentPublications  = ({
+const RecentPublications = ({
   publications,
   showAbstract,
   start = 0,
@@ -40,7 +40,7 @@ const RecentPublications  = ({
   onPubClick,
   onShowMoreClick,
   showIndices,
-}:RecentPublicationsProps) => {
+}: RecentPublicationsProps) => {
   const [filteredPublications, setFilteredPublications] = useState<Array<any>>(
     []
   )
@@ -105,6 +105,5 @@ const RecentPublications  = ({
     </>
   )
 }
-
 
 export default RecentPublications

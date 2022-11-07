@@ -8,15 +8,12 @@ interface IProps extends ILinkProps {
   underline?: boolean
 }
 
-const BlueLink = ({
-  href,
-  className,
-  ariaLabel,
-  children,
-}:IProps) => (
+const BlueLink = ({ href, className, ariaLabel, children }: IProps) => (
   <BaseLink
     href={href}
-    className={cn("text-blue-500", className)} ariaLabel={ariaLabel}  >
+    className={cn("text-blue-500", className)}
+    ariaLabel={ariaLabel}
+  >
     {children}
   </BaseLink>
 )

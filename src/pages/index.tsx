@@ -65,7 +65,9 @@ const IndexPage = ({ data }) => {
           <>
             <h1 className="text-4xl text-center font-bold">Antony Holmes</h1>
 
-            <h1 className="text-lg text-center text-gray-500">Software Engineer</h1>
+            <h1 className="text-lg text-center text-gray-500">
+              Software Engineer
+            </h1>
 
             <p className="mt-2">
               Data scientist and full stack software developer with 8 years
@@ -379,7 +381,7 @@ const IndexPage = ({ data }) => {
       <Page>
         <TwoCol className="p-8">
           <>
-            <div >
+            <div>
               <Title title="References" />
               <div className="flex flex-col gap-y-1">
                 <div className="mb-4">
