@@ -12,9 +12,6 @@ import BasePublicationList from "./basepublicationlist"
 import Row from "../row"
 import PublicationList from "./publicationlist"
 import NoResults from "../noresults"
-import BlueButton from "../links/bluebutton"
-
-const RECORDS_PER_PAGE = 25
 
 type RecentPublicationsProps = {
   publications: Array<any>
@@ -31,11 +28,11 @@ type RecentPublicationsProps = {
   recordsPerPage?: any
 }
 
-const RecentPublications: React.FC<RecentPublicationsProps> = ({
+const RecentPublications  = ({
   publications,
   showAbstract,
-  start,
-  top,
+  start = 0,
+  top = 10,
   showCount,
   showMoreButton,
   baseMode,
@@ -43,7 +40,7 @@ const RecentPublications: React.FC<RecentPublicationsProps> = ({
   onPubClick,
   onShowMoreClick,
   showIndices,
-}) => {
+}:RecentPublicationsProps) => {
   const [filteredPublications, setFilteredPublications] = useState<Array<any>>(
     []
   )
@@ -109,16 +106,5 @@ const RecentPublications: React.FC<RecentPublicationsProps> = ({
   )
 }
 
-RecentPublications.defaultProps = {
-  start: 0,
-  top: 15,
-  showCount: true,
-  className: "",
-  showAbstract: true,
-  showMoreButton: false,
-  onPubClick: null,
-  baseMode: true,
-  showIndices: false,
-}
 
 export default RecentPublications
