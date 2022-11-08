@@ -7,8 +7,6 @@
 
 import React from "react"
 import BasePublication from "./basepublication"
-import OutlineCard from "../outlinecard"
-import FlatCard from "../flatcard"
 
 type PublicationListProps = {
   publications: Array<any>
@@ -22,14 +20,14 @@ type PublicationListProps = {
 // Space is only added to intermediate elements of the list so that
 // wasted space at the bottom is removed
 
-const BasePublicationList: React.FC<PublicationListProps> = ({
+const BasePublicationList= ({
   publications,
-  start,
+  start = 0,
   showIndices,
   showLabLink,
   showAbstract,
   onPubClick,
-}) => (
+}:PublicationListProps) => (
   <ul>
     {publications.map((publication: any, index: number) => (
       <li
@@ -48,13 +46,5 @@ const BasePublicationList: React.FC<PublicationListProps> = ({
     ))}
   </ul>
 )
-
-BasePublicationList.defaultProps = {
-  start: 0,
-  showLabLink: false,
-  showIndices: false,
-  onPubClick: null,
-  showAbstract: true,
-}
 
 export default BasePublicationList

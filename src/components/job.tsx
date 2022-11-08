@@ -1,14 +1,20 @@
 import React from "react"
+import IChildrenProps from "../interfaces/children-props"
 import Row from "./row"
 
-const Job = ({ date, title, place, children }) => (
+interface IProps extends IChildrenProps {
+  date?: string
+  title: string
+  place: string
+}
+
+const Job = ({ date , title, place, children }:IProps) => (
   <Row className="justify-between mb-4">
     <div>
-      <div className="font-bold ">{title}</div>
-      <Row className="font-light gap-x-4 text-gray-600 mb-2 ">
-        <span className="">{place}</span>{" "}
-        <span className="border-l border-gray-400" /> <span>{date}</span>
-      </Row>
+      <h2 className="font-medium text-lg leading-tight">{title}</h2>
+      <h3 className="text-lg gap-x-4 leading-tight">{place}
+      </h3>
+      {date && <h4 className="text-gray-400 mb-2 leading-tight">{date}</h4>}
       {children}
     </div>
   </Row>

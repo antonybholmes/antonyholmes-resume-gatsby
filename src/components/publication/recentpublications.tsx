@@ -32,7 +32,7 @@ const RecentPublications = ({
   publications,
   showAbstract,
   start = 0,
-  top = 10,
+  top = 9,
   showCount,
   showMoreButton,
   baseMode,

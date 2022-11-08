@@ -189,13 +189,13 @@ type BasePublicationProps = {
   showUrl?: boolean
 }
 
-const BasePublication: React.FC<BasePublicationProps> = ({
+const BasePublication = ({
   publication,
   index,
   showAbstract,
   showUrl,
   onPubClick,
-}) => {
+}:BasePublicationProps) => {
   const _handleJournalClick = (journal: string) => {
     if (onPubClick !== null) {
       onPubClick(journal)
@@ -204,11 +204,11 @@ const BasePublication: React.FC<BasePublicationProps> = ({
 
   return (
     <>
-      <div className="font-semibold m-0">{`${
+      <div className="text-base font-semibold m-0">{`${
         index !== -1 ? `${index}. ` : ""
       } ${publication.title}`}</div>
 
-      <p className="font-light m-0">{publication.authors}</p>
+      <p className="m-0 text-gray-600" dangerouslySetInnerHTML={{__html:publication.authors.replace('Holmes AB', '<strong>Holmes AB</strong>')}} />
 
       {/* <Row> */}
       <Row>

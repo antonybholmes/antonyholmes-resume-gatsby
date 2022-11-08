@@ -16,7 +16,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 const Title = ({ title }) => {
   return (
-    <svg viewBox="0 0 180 30" className="w-40 mb-1">
+    <svg viewBox="0 0 180 30" className="w-40 mb-2">
       <defs>
         <linearGradient
           id="rainbow"
@@ -39,6 +39,19 @@ const Title = ({ title }) => {
   )
 }
 
+const Skill = ({ title }) => {
+  return (
+    <div className="rounded-full  bg-gradient-to-r from-purple-500 to-blue-600">
+      <div
+        className="rounded-full px-4 py-1 bg-white font-medium text-blue-800"
+        style={{ margin: "2px" }}
+      >
+        {title}
+      </div>
+    </div>
+  )
+}
+
 type IndexProps = {
   data: any
 }
@@ -48,10 +61,10 @@ const IndexPage = ({ data }) => {
 
   let pages: any[] = []
 
-  let n = Math.floor(publications.length / 11) + 1
+  let n = Math.floor(publications.length / 10) + 1
 
   for (let i = 0; i < n; ++i) {
-    pages.push(publications.slice(i * 10, i * 10 + 10))
+    pages.push(publications.slice(i * 9, i * 9 + 9))
   }
 
   return (
@@ -60,17 +73,19 @@ const IndexPage = ({ data }) => {
       <Page>
         <div className="pt-8 px-8">
           <>
-            <h1 className="text-4xl text-center font-bold">Antony Holmes</h1>
+            <h1 className="text-4xl font-extrabold">Antony Holmes</h1>
 
-            <Row isCentered={true} isVCentered={true} className="gap-x-4 mt-1">
-              <h2 className="text-lg text-gray-500">Data Scientist</h2>
-              <span className="rounded-full w-2 h-2 bg-gray-300" />
+            <Row isVCentered={true} className="gap-x-4 mt-1">
+              <h2 className="text-xl text-gray-500 font-light">
+                Data Scientist, New York
+              </h2>
+              {/* <span className="rounded-full w-2 h-2 bg-gray-300" />
               <h2 className="text-lg text-gray-500">Software Engineer</h2>
               <span className="rounded-full w-2 h-2 bg-gray-300" />
-              <h2 className="text-lg text-gray-500">New York</h2>
+              <h2 className="text-lg text-gray-500">New York</h2> */}
             </Row>
 
-            <p className="mt-2">
+            <p className="mt-3">
               Data scientist and full stack software developer with 8 years
               experience developing open source software and applications for
               cancer genetics research. Experienced in the full software
@@ -121,57 +136,20 @@ const IndexPage = ({ data }) => {
             <div>
               <Title title="Skills" />
 
-              {/* <div className="font-semibold">Programming Languages</div> */}
-              <div className="grid grid-cols-3 gap-2">
-                <div>
-                  <div className="font-semibold">Java</div>
-                  <div className="font-light text-gray-600">
-                    Swing, Spring Boot, Maven
-                  </div>
-                </div>
-                <div>
-                  <div className="font-semibold">Python</div>
-                  <div className="font-light text-gray-600">
-                    Pandas, Numpy, Scikit-learn, Django
-                  </div>
-                </div>
-                <div>
-                  <div className="font-semibold">Web</div>
-                  <div className="font-light text-gray-600">
-                    React, Gatsby, NextJS, TypeScript
-                  </div>
-                </div>
-                <div>
-                  <div className="font-semibold">Databases</div>
-                  <div className="font-light text-gray-600">
-                    PostgreSQL, MySQL, Sqlite
-                  </div>
-                </div>
-                <div>
-                  <div className="font-semibold">Math</div>
-                  <div className="font-light text-gray-600">R, MATLAB</div>
-                </div>
-
-                <div>
-                  <div className="font-semibold">Cloud</div>
-                  <div className="font-light text-gray-600">
-                    EC2, S3, Lambda, CloudFront, API Gateway, SGE, BSUB
-                  </div>
-                </div>
-                <div>
-                  <div className="font-semibold">Development</div>
-                  <div className="font-light text-gray-600">
-                    Visual Studio Code, Eclipse, GitHub
-                  </div>
-                </div>
-
-                {/* <div>
-                <div className="font-semibold" >Office/Design</div>
-                <div className="font-light text-gray-600">
-                  Microsoft Office VBA, LaTeX, Inkscape, Photoshop,
-                  Illustrator
-                </div>
-              </div> */}
+              <div className="flex flex-row flex-wrap gap-2">
+                <Skill title="Java" />
+                <Skill title="Python" />
+                <Skill title="React" />
+                <Skill title="Gatsby" />
+                <Skill title="TypeScript" />
+                <Skill title="PostgreSQL" />
+                <Skill title="R" />
+                <Skill title="MATLAB" />
+                <Skill title="EC2" />
+                <Skill title="S3" />
+                <Skill title="Lambda" />
+                <Skill title="CloudFront" />
+                <Skill title="SGE" />
               </div>
             </div>
 
@@ -283,101 +261,101 @@ const IndexPage = ({ data }) => {
               </Job>
             </div>
           </div>
-
           <div className="flex flex-col gap-y-6">
-            <div className="flex flex-col gap-y-2 border border-gray-300 rounded-2xl px-6 py-4">
-              <Row className="gap-x-2  text-blue-500">
-                <FontAwesomeIcon icon={faEnvelope} size="lg" />
+            <div className="flex flex-col gap-y-6 border border-gray-300 rounded-2xl p-4">
+              <div className="flex flex-col gap-y-2 ">
+                <Row className="gap-x-2  text-blue-500">
+                  <FontAwesomeIcon icon={faEnvelope} size="lg" />
 
-                <div>
-                  <BlackLink
-                    href="mailto:hello@antonyholmes.dev"
-                    ariaLabel={""}
-                  >
-                    hello@antonyholmes.dev
-                  </BlackLink>
-                </div>
-              </Row>
+                  <div>
+                    <BlackLink
+                      href="mailto:hello@antonyholmes.dev"
+                      ariaLabel={""}
+                    >
+                      hello@antonyholmes.dev
+                    </BlackLink>
+                  </div>
+                </Row>
 
-              <Row className="gap-x-2">
-                <FontAwesomeIcon icon={faPhone} size="lg" />
+                <Row className="gap-x-2">
+                  <FontAwesomeIcon icon={faPhone} size="lg" />
 
-                <div>
-                  <BlackLink href="tel:3476885690" ariaLabel={""}>
-                    (347) 688-5690
-                  </BlackLink>
-                </div>
-              </Row>
+                  <div>
+                    <BlackLink href="tel:3476885690" ariaLabel={""}>
+                      (347) 688-5690
+                    </BlackLink>
+                  </div>
+                </Row>
 
-              <Row className="gap-x-2 ">
-                <FontAwesomeIcon icon={faGithub} size="lg" />
+                <Row className="gap-x-2 ">
+                  <FontAwesomeIcon icon={faGithub} size="lg" />
 
-                <div>
-                  <BlackLink
-                    href="https://github.com/antonybholmes"
-                    ariaLabel={""}
-                  >
-                    github.com/antonybholmes
-                  </BlackLink>
-                </div>
-              </Row>
-
-              <div className="text-gray-400">
-                This resume was developed with Node.js and React.
+                  <div>
+                    <BlackLink
+                      href="https://github.com/antonybholmes"
+                      ariaLabel={""}
+                    >
+                      github.com/antonybholmes
+                    </BlackLink>
+                  </div>
+                </Row>
               </div>
             </div>
-
-            <div>
-              <Title title="Education" />
-
+            <div className="flex flex-col gap-y-6 border border-gray-300 rounded-2xl p-4">
               <div>
-                <div className="font-bold">Ph.D Mathematical Biology</div>
-                <div>University of Warwick UK</div>
-              </div>
+                <Title title="Education" />
 
-              {/* <div className="mt-2">
+                <div>
+                  <div className="font-medium">Ph.D Mathematical Biology</div>
+                  <div>University of Warwick UK</div>
+                </div>
+
+                {/* <div className="mt-2">
               <div className="font-bold">M.Sc Computer Science</div>
               <div>University of Warwick UK</div>
             </div> */}
 
-              <div className="mt-2">
-                <div className="font-bold">B.Sc Computer Science</div>
-                <div>University of Warwick UK</div>
-                <div>First-class honours</div>
+                <div className="mt-2">
+                  <div className="font-medium">B.Sc Computer Science</div>
+                  <div>University of Warwick UK</div>
+                  <div>First-class honours</div>
+                </div>
+              </div>
+
+              <div>
+                <Title title="Awards" />
+
+                <div className="font-medium">SIWN Best Paper Award</div>
+                <div>2009, Leipzig</div>
               </div>
             </div>
 
-            <div>
-              <Title title="Awards" />
+            <div className="flex flex-col gap-y-6 border border-gray-300 rounded-2xl p-4">
+              <div>
+                <Title title="Volunteering" />
 
-              <div className="font-bold">SIWN Best Paper Award</div>
-              <div>2009, Leipzig</div>
-            </div>
-
-            <div>
-              <Title title="Volunteering" />
-
-              <Job
-                date="2017 - Present"
-                title="Tax Team Leader"
-                place="New York Cares"
-              >
-                <ul className="flex flex-col gap-y-1">
-                  <li>
-                    Certified as IRS tax team leader to help New Yorkers file
-                    tax returns for free during tax season.
-                  </li>
-                  {/* <li>
+                <Job
+                  date="2017 - Present"
+                  title="Tax Team Leader"
+                  place="New York Cares"
+                >
+                  <ul className="flex flex-col gap-y-1">
+                    <li>
+                      Certified as IRS tax team leader to help New Yorkers file
+                      tax returns for free during tax season.
+                    </li>
+                    {/* <li>
                   Manage a small team of volunteers as liaison between New York
                   Cares and partner organizations.
                 </li> */}
-                  <li>
-                    Work with clients one-on-one to understand their tax
-                    situation and prepare their federal and state returns saving
-                    them <Bold>$100,000</Bold> in fees per year.
-                  </li>
-                </ul>
-              </Job>
+                    <li>
+                      Work with clients one-on-one to understand their tax
+                      situation and prepare their federal and state returns
+                      saving them <Bold>$100,000</Bold> in fees per year.
+                    </li>
+                  </ul>
+                </Job>
+              </div>
             </div>
           </div>
         </TwoCol>
@@ -390,9 +368,7 @@ const IndexPage = ({ data }) => {
               <Title title="References" />
               <div className="flex flex-col gap-y-1">
                 <div className="mb-4">
-                  <div className="font-semibold">
-                    Prof. Riccardo Dalla-Favera
-                  </div>
+                  <div className="font-medium">Prof. Riccardo Dalla-Favera</div>
                   {/* <div>Institute for Cancer Genetics</div> */}
                   <div>Columbia University, New York</div>
                   <div>
@@ -402,7 +378,7 @@ const IndexPage = ({ data }) => {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <div className="font-semibold">Prof. Katia Basso</div>
+                  <div className="font-medium">Prof. Katia Basso</div>
                   {/* <div>Institute for Cancer Genetics</div> */}
                   <div>Columbia University, New York</div>
                   <div>
@@ -415,7 +391,7 @@ const IndexPage = ({ data }) => {
                   </div>
                 </div>
                 <div className="mb-4">
-                  <div className="font-semibold">Prof. Raul Rabandan</div>
+                  <div className="font-medium">Prof. Raul Rabandan</div>
                   {/* <div>Department of Systems Biology</div> */}
                   <div>Columbia University, New York</div>
                   <div>
@@ -446,8 +422,8 @@ const IndexPage = ({ data }) => {
                   showMoreButton={false}
                   showCount={false}
                   showIndices={true}
-                  start={index * 10}
-                  recordsPerPage={10}
+                  start={index * 9}
+                  recordsPerPage={9}
                 />
               </div>
             </div>
