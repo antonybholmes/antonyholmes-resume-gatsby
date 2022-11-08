@@ -195,7 +195,7 @@ const BasePublication = ({
   showAbstract,
   showUrl,
   onPubClick,
-}:BasePublicationProps) => {
+}: BasePublicationProps) => {
   const _handleJournalClick = (journal: string) => {
     if (onPubClick !== null) {
       onPubClick(journal)
@@ -208,7 +208,15 @@ const BasePublication = ({
         index !== -1 ? `${index}. ` : ""
       } ${publication.title}`}</div>
 
-      <p className="m-0 text-gray-600" dangerouslySetInnerHTML={{__html:publication.authors.replace('Holmes AB', '<strong>Holmes AB</strong>')}} />
+      <p
+        className="m-0 text-gray-600"
+        dangerouslySetInnerHTML={{
+          __html: publication.authors.replace(
+            "Holmes AB",
+            "<strong>Holmes AB</strong>"
+          ),
+        }}
+      />
 
       {/* <Row> */}
       <Row>

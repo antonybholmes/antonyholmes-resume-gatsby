@@ -7,7 +7,15 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ["Helvetica Neue", "Montserrat", "Source Sans Pro", "Roboto", "Inter", "Helvetica", "Arial"],
+      sans: [
+        "Helvetica Neue",
+        "Montserrat",
+        "Source Sans Pro",
+        "Roboto",
+        "Inter",
+        "Helvetica",
+        "Arial",
+      ],
     },
     extend: {
       screens: {

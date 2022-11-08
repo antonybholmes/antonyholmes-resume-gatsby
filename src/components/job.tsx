@@ -8,16 +8,24 @@ interface IProps extends IChildrenProps {
   place: string
 }
 
-const Job = ({ date , title, place, children }:IProps) => (
-  <Row className="justify-between mb-4">
-    <div>
-      <h2 className="font-medium text-lg leading-tight">{title}</h2>
-      <h3 className="text-lg gap-x-4 leading-tight">{place}
-      </h3>
-      {date && <h4 className="text-gray-400 mb-2 leading-tight">{date}</h4>}
-      {children}
-    </div>
-  </Row>
+const Job = ({ date, title, place, children }: IProps) => (
+  <div className="flex flex-col gap-y-1">
+    <Row className="justify-between items-center">
+      <div>
+        <h2 className="font-medium text-lg leading-tight">{title}</h2>
+        <Row className="gap-x-2 items-center text-gray-500">
+          <h3 className="text-base leading-tight">{place}</h3>
+          {date && (
+            <>
+              <span>|</span>
+              <h3 className="text-base leading-tight">{date}</h3>
+            </>
+          )}
+        </Row>
+      </div>
+    </Row>
+    {children}
+  </div>
 )
 
 export default Job

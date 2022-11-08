@@ -20,14 +20,14 @@ type PublicationListProps = {
 // Space is only added to intermediate elements of the list so that
 // wasted space at the bottom is removed
 
-const BasePublicationList= ({
+const BasePublicationList = ({
   publications,
   start = 0,
   showIndices,
   showLabLink,
   showAbstract,
   onPubClick,
-}:PublicationListProps) => (
+}: PublicationListProps) => (
   <ul>
     {publications.map((publication: any, index: number) => (
       <li
