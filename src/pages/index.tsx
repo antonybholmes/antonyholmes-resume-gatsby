@@ -13,25 +13,25 @@ import TwoCol from "../components/twocol"
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import cn from "../lib/class-names"
 
 const Title = ({ title }) => {
   return (
-    <svg viewBox="0 0 180 30" className="w-40 mb-2">
+    <svg viewBox="0 0 190 30" className="w-40 mb-2">
       <defs>
-        <linearGradient
-          id="rainbow"
-          x1="0"
-          x2="100%"
-          y1="0"
-          y2="0"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop stopColor="#f43f5e" offset="0%" />
-          <stop stopColor="#2563eb" offset="100%" />
+        <linearGradient id="rainbow" x1="0" x2="100%" y1="0" y2="0">
+          <stop stopColor="#06b6d4" offset="0%" />
+          <stop stopColor="#818cf8" offset="50%" />
+          <stop stopColor="#fb7185" offset="100%" />
         </linearGradient>
       </defs>
-      <text fill="url(#rainbow)">
-        <tspan x="0" y="20" className="text-xl font-bold uppercase">
+      <text>
+        <tspan
+          x="0"
+          y="25"
+          className="text-2xl font-base uppercase"
+          fill="url(#rainbow)"
+        >
           {title}
         </tspan>
       </text>
@@ -39,21 +39,17 @@ const Title = ({ title }) => {
   )
 }
 
-const Skill = ({ title }) => {
+const Skill = ({ title, color = "bg-blue-500" }) => {
   return (
-    <div className="rounded-full bg-gradient-to-r from-purple-500 to-blue-600">
-      <div
-        className="rounded-full px-3 py-1 bg-white text-xs font-medium text-blue-800"
-        style={{ margin: "2px" }}
-      >
-        {title}
-      </div>
+    <div
+      className={cn(
+        "rounded-full px-3 py-1 text-xs font-medium text-white",
+        color
+      )}
+    >
+      {title}
     </div>
   )
-}
-
-type IndexProps = {
-  data: any
 }
 
 const IndexPage = ({ data }) => {
@@ -71,11 +67,13 @@ const IndexPage = ({ data }) => {
     <Layout>
       {/* <SEO title="Home" /> */}
       <Page>
-        <div className="p-8">
-          <h1 className="text-4xl font-extrabold">Antony Holmes</h1>
+        <div className="px-6">
+          <h1 className="text-5xl font-extrabold text-center mt-8">
+            Antony Holmes
+          </h1>
 
-          <Row isVCentered={true} className="gap-x-4 mt-1">
-            <h2 className="text-xl text-gray-500 font-light">
+          <Row isVCentered={true} isCentered={true} className="gap-x-4 mt-1">
+            <h2 className="text-2xl text-gray-500 font-light">
               Data Scientist, New York
             </h2>
             {/* <span className="rounded-full w-2 h-2 bg-gray-300" />
@@ -84,7 +82,7 @@ const IndexPage = ({ data }) => {
               <h2 className="text-lg text-gray-500">New York</h2> */}
           </Row>
 
-          <p className="mt-3">
+          <p className="mt-8">
             Data scientist and full stack software developer with 8 years
             experience developing open source software and applications for
             cancer genetics research. Experienced in the full software
@@ -94,9 +92,9 @@ const IndexPage = ({ data }) => {
           </p>
         </div>
 
-        <TwoCol>
-          <div className="flex flex-col gap-y-4">
-            <div className="flex flex-col gap-y-3">
+        <TwoCol className="mt-12">
+          <div className="flex flex-col gap-y-5">
+            <div className="flex flex-col gap-y-3 px-4 py-6 rounded-xl shadow-card bg-white">
               <Row className="gap-x-2 text-blue-500">
                 <FontAwesomeIcon icon={faEnvelope} size="lg" />
 
@@ -105,7 +103,7 @@ const IndexPage = ({ data }) => {
                     href="mailto:hello@antonyholmes.dev"
                     ariaLabel={""}
                   >
-                    hello@antonyholmes.dev
+                    antony@antonyholmes.dev
                   </BlackLink>
                 </div>
               </Row>
@@ -134,12 +132,13 @@ const IndexPage = ({ data }) => {
               </Row>
             </div>
 
-            <span className="border-t border-gray-200" />
+            {/* <span className="border-t border-gray-200" /> */}
+            <span></span>
 
             <div>
               <Title title="Skills" />
 
-              <div className="flex flex-row flex-wrap gap-2">
+              <div className="flex flex-row flex-wrap gap-x-2 gap-y-1">
                 <Skill title="Java" />
                 <Skill title="Python" />
                 <Skill title="React" />
@@ -154,28 +153,45 @@ const IndexPage = ({ data }) => {
                 <Skill title="CloudFront" />
                 <Skill title="SGE" />
               </div>
+
+              <div className="flex flex-row flex-wrap gap-x-2 gap-y-1 mt-4">
+                <Skill title="Single Cell" color="bg-teal-500" />
+                <Skill title="ChIP-seq" color="bg-teal-500" />
+              </div>
             </div>
 
             <span className="border-t border-gray-200" />
 
             <div>
               <Title title="Education" />
+              <div className="flex flex-col gap-y-4">
+                <Job
+                  title="Ph.D Mathematical Biology"
+                  place="University of Warwick, UK"
+                />
 
-              <div>
+                <Job
+                  title="B.Sc Computer Science"
+                  place="University of Warwick, UK"
+                >
+                  <div>First-class honours</div>
+                </Job>
+              </div>
+              {/* <div>
                 <div className="font-medium">Ph.D Mathematical Biology</div>
                 <div>University of Warwick UK</div>
-              </div>
+              </div> */}
 
               {/* <div className="mt-2">
               <div className="font-bold">M.Sc Computer Science</div>
               <div>University of Warwick UK</div>
             </div> */}
 
-              <div className="mt-2">
+              {/* <div className="mt-2">
                 <div className="font-medium">B.Sc Computer Science</div>
                 <div>University of Warwick UK</div>
                 <div>First-class honours</div>
-              </div>
+              </div> */}
             </div>
 
             <span className="border-t border-gray-200" />
@@ -183,8 +199,10 @@ const IndexPage = ({ data }) => {
             <div>
               <Title title="Awards" />
 
-              <div className="font-medium">SIWN Best Paper Award</div>
-              <div>2009, Leipzig</div>
+              <Job date="2009" title="SIWN Best Paper Award" place="Leipzig" />
+
+              {/* <div className="font-medium">SIWN Best Paper Award</div>
+              <div>2009, Leipzig</div> */}
             </div>
           </div>
           <div className="flex flex-col gap-y-6">
@@ -308,8 +326,9 @@ const IndexPage = ({ data }) => {
               >
                 <ul className="flex flex-col gap-y-1">
                   <li>
-                    Certified as IRS tax team leader to help New Yorkers file
-                    tax returns for free during tax season.
+                    Certified IRS tax team leader managing small teams of
+                    volunteers to help New Yorkers file federal and state tax
+                    returns for free.
                   </li>
                   {/* <li>
                   Manage a small team of volunteers as liaison between New York
@@ -317,8 +336,11 @@ const IndexPage = ({ data }) => {
                 </li> */}
                   <li>
                     Work with clients one-on-one to understand their tax
-                    situation and prepare their federal and state returns saving
-                    them <Bold>$100,000</Bold> in fees per year.
+                    situation.
+                  </li>
+                  <li>
+                    Help low income families save <Bold>$100,000</Bold> in fees
+                    per year.
                   </li>
                 </ul>
               </Job>
@@ -352,7 +374,7 @@ const IndexPage = ({ data }) => {
         <div className="p-8">
           <div>
             <Title title="References" />
-            <div className="flex flex-col gap-y-1">
+            <div className="flex flex-col gap-y-1 mt-8 ">
               <div className="mb-4">
                 <div className="font-medium">Prof. Riccardo Dalla-Favera</div>
                 {/* <div>Institute for Cancer Genetics</div> */}

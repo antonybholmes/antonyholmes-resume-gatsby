@@ -9,12 +9,12 @@ module.exports = {
     fontFamily: {
       sans: [
         "Helvetica Neue",
-        "Montserrat",
-        "Source Sans Pro",
-        "Roboto",
         "Inter",
         "Helvetica",
         "Arial",
+        "Montserrat",
+        "Source Sans Pro",
+        "Roboto",
       ],
     },
     extend: {
@@ -289,7 +289,7 @@ module.exports = {
         "4xl": "2rem",
       },
       boxShadow: {
-        card: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        card: "0 0 15px 0 rgba(0, 0, 0, 0.2)",
         "flat-card": "0 0 20px rgba(0, 0, 0, 0.02)",
         day: "0 0 10px rgba(0, 0, 0, 0.1)",
         "slide-menu": "0 20px 30px rgba(0, 0, 0, 0.5)",
