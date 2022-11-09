@@ -215,9 +215,7 @@ export default function IndexPage({ data }) {
           </div>
           <div className="flex flex-col gap-y-6">
             <div>
-              <h1 className="text-4xl font-extrabold">
-                Antony Holmes
-              </h1>
+              <h1 className="text-4xl font-extrabold">Antony Holmes</h1>
 
               <Row
                 isVCentered={true}
