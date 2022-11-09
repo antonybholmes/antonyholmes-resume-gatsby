@@ -14,45 +14,53 @@ import { faEnvelope } from "@fortawesome/free-regular-svg-icons"
 import { faPhone } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import cn from "../lib/class-names"
+import Seo from "../components/seo"
 
 const Title = ({ title }) => {
   return (
-    <svg viewBox="0 0 190 30" className="w-40 mb-2">
-      <defs>
-        <linearGradient id="rainbow" x1="0" x2="100%" y1="0" y2="0">
-          <stop stopColor="#06b6d4" offset="0%" />
-          <stop stopColor="#818cf8" offset="50%" />
-          <stop stopColor="#fb7185" offset="100%" />
-        </linearGradient>
-      </defs>
-      <text>
-        <tspan
-          x="0"
-          y="25"
-          className="text-2xl font-base uppercase"
-          fill="url(#rainbow)"
-        >
-          {title}
-        </tspan>
-      </text>
-    </svg>
+    <Row isVCentered={true} className="gap-x-2 mb-3">
+      {/* <img
+          src="/assets/svg/heading-arrow.svg"
+          width="20"
+          height="30"
+          className="w-5"
+        /> */}
+      <svg viewBox="0 0 190 30" className="w-40">
+        <defs>
+          <linearGradient id="rainbow" x1="0" x2="100%" y1="0" y2="0">
+            <stop stopColor="#06b6d4" offset="0%" />
+            <stop stopColor="#818cf8" offset="50%" />
+            <stop stopColor="#fb7185" offset="100%" />
+          </linearGradient>
+        </defs>
+        <text>
+          <tspan
+            x="0"
+            y="25"
+            className="text-2xl font-semibold uppercase"
+            fill="url(#rainbow)"
+          >
+            {title}
+          </tspan>
+        </text>
+      </svg>
+    </Row>
   )
 }
 
-const Skill = ({ title, color = "bg-blue-500" }) => {
+const Skill = ({ title, color = "border-blue-500 text-blue-500" }) => {
   return (
-    <div
-      className={cn(
-        "rounded-full px-3 py-1 text-xs font-medium text-white",
-        color
-      )}
+    <Row
+      isCentered={true}
+      isVCentered={true}
+      className={cn("rounded-full text-xs font-medium border px-3 py-1", color)}
     >
       {title}
-    </div>
+    </Row>
   )
 }
 
-const IndexPage = ({ data }) => {
+export default function IndexPage({ data }) {
   const { publications } = data.allPublications.nodes[0]
 
   let pages: any[] = []
@@ -67,19 +75,15 @@ const IndexPage = ({ data }) => {
     <Layout>
       {/* <SEO title="Home" /> */}
       <Page>
-        <div className="px-6">
+        {/* <div className="px-6">
           <h1 className="text-5xl font-extrabold text-center mt-8">
             Antony Holmes
           </h1>
 
           <Row isVCentered={true} isCentered={true} className="gap-x-4 mt-1">
-            <h2 className="text-2xl text-gray-500 font-light">
+            <h2 className="text-2xl text-gray-500 font-light uppercase tracking-wide">
               Data Scientist, New York
             </h2>
-            {/* <span className="rounded-full w-2 h-2 bg-gray-300" />
-              <h2 className="text-lg text-gray-500">Software Engineer</h2>
-              <span className="rounded-full w-2 h-2 bg-gray-300" />
-              <h2 className="text-lg text-gray-500">New York</h2> */}
           </Row>
 
           <p className="mt-8">
@@ -90,12 +94,12 @@ const IndexPage = ({ data }) => {
             design, interface implementation, and maintenance. Excellent written
             and oral communication skills demonstrated by 30 publications.
           </p>
-        </div>
+        </div> */}
 
-        <TwoCol className="mt-12">
+        <TwoCol className="mt-8">
           <div className="flex flex-col gap-y-5">
-            <div className="flex flex-col gap-y-3 px-4 py-6 rounded-xl shadow-card bg-white">
-              <Row className="gap-x-2 text-blue-500">
+            <div className="flex flex-col gap-y-3 px-4 py-6 rounded-xl bg-gradient-to-b from-gray-200 to-gray-200/80 text-gray-600">
+              <Row isVCentered={true} className="gap-x-3">
                 <FontAwesomeIcon icon={faEnvelope} size="lg" />
 
                 <div>
@@ -108,7 +112,7 @@ const IndexPage = ({ data }) => {
                 </div>
               </Row>
 
-              <Row className="gap-x-2">
+              <Row isVCentered={true} className="gap-x-3">
                 <FontAwesomeIcon icon={faPhone} size="lg" />
 
                 <div>
@@ -118,7 +122,7 @@ const IndexPage = ({ data }) => {
                 </div>
               </Row>
 
-              <Row className="gap-x-2 ">
+              <Row isVCentered={true} className="gap-x-3">
                 <FontAwesomeIcon icon={faGithub} size="lg" />
 
                 <div>
@@ -133,7 +137,6 @@ const IndexPage = ({ data }) => {
             </div>
 
             {/* <span className="border-t border-gray-200" /> */}
-            <span></span>
 
             <div>
               <Title title="Skills" />
@@ -141,6 +144,7 @@ const IndexPage = ({ data }) => {
               <div className="flex flex-row flex-wrap gap-x-2 gap-y-1">
                 <Skill title="Java" />
                 <Skill title="Python" />
+                <Skill title="C++" />
                 <Skill title="React" />
                 <Skill title="Gatsby" />
                 <Skill title="TypeScript" />
@@ -155,12 +159,16 @@ const IndexPage = ({ data }) => {
               </div>
 
               <div className="flex flex-row flex-wrap gap-x-2 gap-y-1 mt-4">
-                <Skill title="Single Cell" color="bg-teal-500" />
-                <Skill title="ChIP-seq" color="bg-teal-500" />
+                <Skill
+                  title="Single Cell"
+                  color="border-teal-500 text-teal-500"
+                />
+                <Skill title="RNA-seq" color="border-teal-500 text-teal-500" />
+                <Skill title="ChIP-seq" color="border-teal-500 text-teal-500" />
               </div>
             </div>
 
-            <span className="border-t border-gray-200" />
+            {/* <span className="border-t border-gray-200" /> */}
 
             <div>
               <Title title="Education" />
@@ -194,7 +202,7 @@ const IndexPage = ({ data }) => {
               </div> */}
             </div>
 
-            <span className="border-t border-gray-200" />
+            {/* <span className="border-t border-gray-200" /> */}
 
             <div>
               <Title title="Awards" />
@@ -207,12 +215,43 @@ const IndexPage = ({ data }) => {
           </div>
           <div className="flex flex-col gap-y-6">
             <div>
+              <h1 className="text-4xl font-extrabold">
+                Antony Holmes
+              </h1>
+
+              <Row
+                isVCentered={true}
+                isCentered={false}
+                className="gap-x-4 mt-1"
+              >
+                <h2 className="text-xl text-gray-500 font-light uppercase tracking-wide">
+                  Data Scientist, New York
+                </h2>
+                {/* <span className="rounded-full w-2 h-2 bg-gray-300" />
+              <h2 className="text-lg text-gray-500">Software Engineer</h2>
+              <span className="rounded-full w-2 h-2 bg-gray-300" />
+              <h2 className="text-lg text-gray-500">New York</h2> */}
+              </Row>
+
+              <p className="mt-6">
+                Data scientist and full stack software developer with 8 years
+                experience developing open source software and applications for
+                cancer genetics research. Experienced in the full software
+                development life-cycle from requirement definition, prototyping,
+                design, interface implementation, and maintenance. Excellent
+                written and oral communication skills demonstrated by 30
+                publications.
+              </p>
+            </div>
+
+            <div>
               <Title title="Work History" />
               <div className="flex flex-col gap-y-4">
                 <Job
                   date="2015 - Present"
                   title="Senior Bioinformatics Developer"
                   place="Columbia University"
+                  className="shadow-card rounded-xl p-4 -ml-4"
                 >
                   <ul className="flex flex-col gap-y-1">
                     {/* <li>
@@ -258,6 +297,7 @@ const IndexPage = ({ data }) => {
                   date="2012 - 2015"
                   title="Associate Research Scientist"
                   place="Columbia University"
+                  className="mr-4"
                 >
                   <ul className="flex flex-col gap-y-1">
                     {/* <li>
@@ -295,6 +335,7 @@ const IndexPage = ({ data }) => {
                   date="2009 - 2012"
                   title="Post Doctoral Research Scientist"
                   place="Columbia University"
+                  className="mr-4"
                 >
                   <ul className="flex flex-col gap-y-1">
                     {/* <li>
@@ -323,6 +364,7 @@ const IndexPage = ({ data }) => {
                 date="2017 - Present"
                 title="Tax Team Leader"
                 place="New York Cares"
+                className="mr-4"
               >
                 <ul className="flex flex-col gap-y-1">
                   <li>
@@ -419,7 +461,7 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export default IndexPage
+export const Head = () => <Seo title="Home" />
 
 export const query = graphql`
   query {

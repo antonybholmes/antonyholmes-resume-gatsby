@@ -1,5 +1,6 @@
 import React from "react"
 import IChildrenProps from "../interfaces/children-props"
+import cn from "../lib/class-names"
 import Row from "./row"
 
 interface IProps extends IChildrenProps {
@@ -8,14 +9,14 @@ interface IProps extends IChildrenProps {
   place: string
 }
 
-const Job = ({ date, title, place, children }: IProps) => (
-  <div className="flex flex-col">
+const Job = ({ date, title, place, className, children }: IProps) => (
+  <div className={cn("flex flex-col", className)}>
     <Row className="justify-between items-center">
       <div>
-        <h2 className="font-medium text-base leading-tight text-blue-800">
+        <h2 className="font-medium text-base leading-tight text-blue-900">
           {title}
         </h2>
-        <Row className="gap-x-2 items-center  text-blue-500">
+        <Row className="gap-x-2 items-center text-blue-500">
           <h3 className="leading-tight">{place}</h3>
           {date && (
             <>
