@@ -60,15 +60,18 @@ const Skill = ({ title, color = "bg-blue-400 text-white" }) => {
   )
 }
 
+const RECORDS = 9
+
 export default function IndexPage({ data }) {
   const { publications } = data.allPublications.nodes[0]
 
   let pages: any[] = []
 
-  let n = Math.floor(publications.length / 10) + 1
+  let n = Math.floor(publications.length / (RECORDS + 1)) + 1
 
   for (let i = 0; i < n; ++i) {
-    pages.push(publications.slice(i * 9, i * 9 + 9))
+    const s = i * RECORDS
+    pages.push(publications.slice(s, s + RECORDS))
   }
 
   return (
@@ -98,8 +101,30 @@ export default function IndexPage({ data }) {
 
         <TwoCol className="mt-8">
           <div className="flex flex-col gap-y-5">
-            <div className="flex flex-col gap-y-3 px-4 py-5 rounded-xl shadow-card text-gray-600">
-              <Row isVCentered={true} className="gap-x-3">
+            <div>
+              <h1 className="text-4xl font-medium">
+                Antony Holmes
+              </h1>
+
+              <Row
+                isVCentered={true}
+                isCentered={false}
+                className="gap-x-4 mt-1"
+              >
+                <h2 className="text-xl text-gray-500 font-light uppercase tracking-wide">
+                  Data Scientist
+                </h2>
+                {/* <span className="rounded-full w-2 h-2 bg-gray-300" />
+              <h2 className="text-lg text-gray-500">Software Engineer</h2>
+              <span className="rounded-full w-2 h-2 bg-gray-300" />
+              <h2 className="text-lg text-gray-500">New York</h2> */}
+              </Row>
+
+              <h2 className="text-lg">New York</h2>
+            </div>
+
+            <div className="flex flex-col gap-y-3 p-4 rounded-xl bg-gray-200/80 text-gray-600">
+              <Row isVCentered={true} className="gap-x-2">
                 <FontAwesomeIcon icon={faEnvelope} size="lg" />
 
                 <div>
@@ -112,7 +137,7 @@ export default function IndexPage({ data }) {
                 </div>
               </Row>
 
-              <Row isVCentered={true} className="gap-x-3">
+              <Row isVCentered={true} className="gap-x-2">
                 <FontAwesomeIcon icon={faPhone} size="lg" />
 
                 <div>
@@ -122,7 +147,7 @@ export default function IndexPage({ data }) {
                 </div>
               </Row>
 
-              <Row isVCentered={true} className="gap-x-3">
+              <Row isVCentered={true} className="gap-x-2">
                 <FontAwesomeIcon icon={faGithub} size="lg" />
 
                 <div>
@@ -159,10 +184,7 @@ export default function IndexPage({ data }) {
               </div>
 
               <div className="flex flex-row flex-wrap gap-x-2 gap-y-1 mt-4">
-                <Skill
-                  title="Single Cell"
-                  color="bg-teal-400 text-white"
-                />
+                <Skill title="Single Cell" color="bg-teal-400 text-white" />
                 <Skill title="RNA-seq" color="bg-teal-400 text-white" />
                 <Skill title="ChIP-seq" color="bg-teal-400 text-white" />
               </div>
@@ -176,11 +198,13 @@ export default function IndexPage({ data }) {
                 <Job
                   title="Ph.D Mathematical Biology"
                   place="University of Warwick, UK"
+                  color="text-gray-800"
                 />
 
                 <Job
                   title="B.Sc Computer Science"
                   place="University of Warwick, UK"
+                  color="text-gray-800"
                 >
                   <div>First-class honours</div>
                 </Job>
@@ -207,7 +231,7 @@ export default function IndexPage({ data }) {
             <div>
               <Title title="Awards" />
 
-              <Job date="2009" title="SIWN Best Paper Award" place="Leipzig" />
+              <Job date="2009" title="SIWN Best Paper Award" place="Leipzig" color="text-gray-800"/>
 
               {/* <div className="font-medium">SIWN Best Paper Award</div>
               <div>2009, Leipzig</div> */}
@@ -215,23 +239,7 @@ export default function IndexPage({ data }) {
           </div>
           <div className="flex flex-col gap-y-6">
             <div>
-              <h1 className="text-4xl font-extrabold text-blue-700">Antony Holmes</h1>
-
-              <Row
-                isVCentered={true}
-                isCentered={false}
-                className="gap-x-4 mt-1"
-              >
-                <h2 className="text-xl text-blue-500 font-light uppercase tracking-wide">
-                  Data Scientist, New York
-                </h2>
-                {/* <span className="rounded-full w-2 h-2 bg-gray-300" />
-              <h2 className="text-lg text-gray-500">Software Engineer</h2>
-              <span className="rounded-full w-2 h-2 bg-gray-300" />
-              <h2 className="text-lg text-gray-500">New York</h2> */}
-              </Row>
-
-              <p className="mt-6">
+              <p>
                 Data scientist and full stack software developer with 8 years
                 experience developing open source software and applications for
                 cancer genetics research. Experienced in the full software
@@ -249,7 +257,7 @@ export default function IndexPage({ data }) {
                   date="2015 - Present"
                   title="Senior Bioinformatics Developer"
                   place="Columbia University"
-                  className="bg-gray-200/80 rounded-xl p-4 -ml-4"
+
                 >
                   <ul className="flex flex-col gap-y-1">
                     {/* <li>
@@ -295,7 +303,7 @@ export default function IndexPage({ data }) {
                   date="2012 - 2015"
                   title="Associate Research Scientist"
                   place="Columbia University"
-                  className="mr-4"
+      
                 >
                   <ul className="flex flex-col gap-y-1">
                     {/* <li>
@@ -333,7 +341,7 @@ export default function IndexPage({ data }) {
                   date="2009 - 2012"
                   title="Post Doctoral Research Scientist"
                   place="Columbia University"
-                  className="mr-4"
+        
                 >
                   <ul className="flex flex-col gap-y-1">
                     {/* <li>
@@ -362,7 +370,7 @@ export default function IndexPage({ data }) {
                 date="2017 - Present"
                 title="Tax Team Leader"
                 place="New York Cares"
-                className="mr-4"
+ 
               >
                 <ul className="flex flex-col gap-y-1">
                   <li>
@@ -401,8 +409,8 @@ export default function IndexPage({ data }) {
                   showMoreButton={false}
                   showCount={false}
                   showIndices={true}
-                  start={index * 9}
-                  recordsPerPage={9}
+                  start={index * RECORDS}
+                  recordsPerPage={RECORDS}
                 />
               </div>
             </div>

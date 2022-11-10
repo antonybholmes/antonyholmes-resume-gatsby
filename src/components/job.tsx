@@ -1,3 +1,4 @@
+import { connect } from "puppeteer-core"
 import React from "react"
 import IChildrenProps from "../interfaces/children-props"
 import cn from "../lib/class-names"
@@ -7,16 +8,17 @@ interface IProps extends IChildrenProps {
   date?: string
   title: string
   place: string
+  color?: string
 }
 
-const Job = ({ date, title, place, className, children }: IProps) => (
+const Job = ({ date, title, place, className, color="text-blue-600", children }: IProps) => (
   <div className={cn("flex flex-col", className)}>
     <Row className="justify-between items-center">
       <div>
-        <h2 className="font-medium text-base leading-tight text-gray-600">
+        <h2 className={cn("font-medium text-base leading-tight", color)}>
           {title}
         </h2>
-        <Row className="gap-x-2 items-center text-gray-500">
+        <Row className={cn("gap-x-2 items-center", color)}>
           <h3 className="leading-tight">{place}</h3>
           {date && (
             <>

@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react"
 //import PublicationYears from "./publicationyears"
 import BasePublicationList from "./basepublicationlist"
 import Row from "../row"
-import PublicationList from "./publicationlist"
+
 import NoResults from "../noresults"
 
 type RecentPublicationsProps = {
@@ -32,10 +32,8 @@ const RecentPublications = ({
   publications,
   showAbstract,
   start = 0,
-  top = 9,
   showCount,
-  showMoreButton,
-  baseMode,
+  recordsPerPage,
   className,
   onPubClick,
   onShowMoreClick,
@@ -44,18 +42,13 @@ const RecentPublications = ({
   const [filteredPublications, setFilteredPublications] = useState<Array<any>>(
     []
   )
-  const [recordsPerPage, setRecordsPerPage] = useState(-1)
 
   useEffect(() => {
     updatePublications()
   }, [])
 
   useEffect(() => {
-    if (recordsPerPage != top) {
-      setRecordsPerPage(top)
-    } else {
-      updatePublications()
-    }
+    updatePublications()
   }, [publications])
 
   useEffect(() => {
@@ -66,9 +59,7 @@ const RecentPublications = ({
     setFilteredPublications(publications.slice(start, start + recordsPerPage))
   }
 
-  const handleShowMoreClick = (e: any) => {
-    setRecordsPerPage(2 * recordsPerPage)
-  }
+
 
   return (
     <>
