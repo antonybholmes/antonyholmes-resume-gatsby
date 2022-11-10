@@ -13,10 +13,10 @@ const Job = ({ date, title, place, className, children }: IProps) => (
   <div className={cn("flex flex-col", className)}>
     <Row className="justify-between items-center">
       <div>
-        <h2 className="font-medium text-base leading-tight text-blue-900">
+        <h2 className="font-medium text-base leading-tight text-gray-600">
           {title}
         </h2>
-        <Row className="gap-x-2 items-center text-blue-500">
+        <Row className="gap-x-2 items-center text-gray-500">
           <h3 className="leading-tight">{place}</h3>
           {date && (
             <>

@@ -29,8 +29,8 @@ const Title = ({ title }) => {
         <defs>
           <linearGradient id="rainbow" x1="0" x2="100%" y1="0" y2="0">
             <stop stopColor="#06b6d4" offset="0%" />
-            <stop stopColor="#818cf8" offset="50%" />
-            <stop stopColor="#fb7185" offset="100%" />
+            <stop stopColor="#6366f1" offset="50%" />
+            <stop stopColor="#f43f5e" offset="100%" />
           </linearGradient>
         </defs>
         <text>
@@ -48,12 +48,12 @@ const Title = ({ title }) => {
   )
 }
 
-const Skill = ({ title, color = "border-blue-500 text-blue-500" }) => {
+const Skill = ({ title, color = "bg-blue-400 text-white" }) => {
   return (
     <Row
       isCentered={true}
       isVCentered={true}
-      className={cn("rounded-full text-xs font-medium border px-3 py-1", color)}
+      className={cn("rounded-full text-xs font-medium  px-3 py-1", color)}
     >
       {title}
     </Row>
@@ -98,7 +98,7 @@ export default function IndexPage({ data }) {
 
         <TwoCol className="mt-8">
           <div className="flex flex-col gap-y-5">
-            <div className="flex flex-col gap-y-3 px-4 py-6 rounded-xl bg-gradient-to-b from-gray-200 to-gray-200/80 text-gray-600">
+            <div className="flex flex-col gap-y-3 px-4 py-5 rounded-xl shadow-card text-gray-600">
               <Row isVCentered={true} className="gap-x-3">
                 <FontAwesomeIcon icon={faEnvelope} size="lg" />
 
@@ -161,10 +161,10 @@ export default function IndexPage({ data }) {
               <div className="flex flex-row flex-wrap gap-x-2 gap-y-1 mt-4">
                 <Skill
                   title="Single Cell"
-                  color="border-teal-500 text-teal-500"
+                  color="bg-teal-400 text-white"
                 />
-                <Skill title="RNA-seq" color="border-teal-500 text-teal-500" />
-                <Skill title="ChIP-seq" color="border-teal-500 text-teal-500" />
+                <Skill title="RNA-seq" color="bg-teal-400 text-white" />
+                <Skill title="ChIP-seq" color="bg-teal-400 text-white" />
               </div>
             </div>
 
@@ -215,14 +215,14 @@ export default function IndexPage({ data }) {
           </div>
           <div className="flex flex-col gap-y-6">
             <div>
-              <h1 className="text-4xl font-extrabold">Antony Holmes</h1>
+              <h1 className="text-4xl font-extrabold text-blue-700">Antony Holmes</h1>
 
               <Row
                 isVCentered={true}
                 isCentered={false}
                 className="gap-x-4 mt-1"
               >
-                <h2 className="text-xl text-gray-500 font-light uppercase tracking-wide">
+                <h2 className="text-xl text-blue-500 font-light uppercase tracking-wide">
                   Data Scientist, New York
                 </h2>
                 {/* <span className="rounded-full w-2 h-2 bg-gray-300" />
@@ -249,7 +249,7 @@ export default function IndexPage({ data }) {
                   date="2015 - Present"
                   title="Senior Bioinformatics Developer"
                   place="Columbia University"
-                  className="shadow-card rounded-xl p-4 -ml-4"
+                  className="bg-gray-200/80 rounded-xl p-4 -ml-4"
                 >
                   <ul className="flex flex-col gap-y-1">
                     {/* <li>
