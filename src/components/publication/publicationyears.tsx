@@ -67,7 +67,7 @@ type YearMarkerProps = {
 //         clipPath: "polygon(1.1rem 0, 0 50%, 1.1rem 100%, 100% 100%, 100%  0)",
 //       }}
 //     >
-//       <h4 className="font-semibold">{year}</h4>
+//       <h4 className="font-bold">{year}</h4>
 //     </div>
 //   )
 // }
@@ -152,7 +152,7 @@ const PublicationYears: React.FC<PublicationYearsProps> = ({
                   className="w-full bg-columbia-blue-90 text-white-95 text-center py-2 z-10"
                   size="lg"
                 >
-                  <h4 className="font-semibold">{year}</h4>
+                  <h4 className="font-bold">{year}</h4>
                 </ShowSmall>
 
                 <HideSmall className="relative w-full" size="lg">

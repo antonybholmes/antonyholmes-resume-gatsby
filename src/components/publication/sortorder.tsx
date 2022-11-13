@@ -63,7 +63,7 @@ const SortOrder: React.FC<SortOrderProps> = ({ selected, onChange }) => {
   return (
     <div>
       {/* <div>
-        <h6 className="font-semibold">Sort By</h6>
+        <h6 className="font-bold">Sort By</h6>
       </div> */}
 
       {ITEMS.map((text: string, index: number) => {

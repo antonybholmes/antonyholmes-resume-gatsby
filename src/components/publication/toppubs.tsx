@@ -45,7 +45,7 @@ type TopPubsProps = {
 const TopPubs: React.FC<TopPubsProps> = ({ topPubs, onPubClick }) => (
   <div>
     {/* <div>
-      <h6 className="font-semibold">Top Journals</h6>
+      <h6 className="font-bold">Top Journals</h6>
     </div> */}
     <div>
       {topPubs.map((journal: any, index: number) => {

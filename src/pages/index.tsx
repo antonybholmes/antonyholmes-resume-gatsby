@@ -37,7 +37,7 @@ const Title = ({ title }) => {
           <tspan
             x="0"
             y="25"
-            className="text-2xl font-semibold uppercase"
+            className="text-2xl font-bold uppercase"
             fill="url(#rainbow)"
           >
             {title}
@@ -53,7 +53,7 @@ const Skill = ({ title, color = "bg-blue-400 text-white" }) => {
     <Row
       isCentered={true}
       isVCentered={true}
-      className={cn("rounded-full text-xs font-medium  px-3 py-1", color)}
+      className={cn("rounded-full text-xs px-3 py-1", color)}
     >
       {title}
     </Row>
@@ -102,7 +102,7 @@ export default function IndexPage({ data }) {
         <TwoCol className="mt-8">
           <div className="flex flex-col gap-y-5">
             <div>
-              <h1 className="text-4xl font-medium">
+              <h1 className="text-4xl font-extrabold">
                 Antony Holmes
               </h1>
 
@@ -123,8 +123,8 @@ export default function IndexPage({ data }) {
               <h2 className="text-lg">New York</h2>
             </div>
 
-            <div className="flex flex-col gap-y-3 p-4 rounded-xl bg-gray-200/80 text-gray-600">
-              <Row isVCentered={true} className="gap-x-2">
+            <div className="flex flex-col gap-y-2 py-4 px-3 rounded-xl bg-gray-200/80 text-gray-600">
+              <Row isVCentered={true} className="gap-x-1">
                 <FontAwesomeIcon icon={faEnvelope} size="lg" />
 
                 <div>
@@ -137,7 +137,7 @@ export default function IndexPage({ data }) {
                 </div>
               </Row>
 
-              <Row isVCentered={true} className="gap-x-2">
+              <Row isVCentered={true} className="gap-x-1">
                 <FontAwesomeIcon icon={faPhone} size="lg" />
 
                 <div>
@@ -147,7 +147,7 @@ export default function IndexPage({ data }) {
                 </div>
               </Row>
 
-              <Row isVCentered={true} className="gap-x-2">
+              <Row isVCentered={true} className="gap-x-1">
                 <FontAwesomeIcon icon={faGithub} size="lg" />
 
                 <div>
@@ -210,7 +210,7 @@ export default function IndexPage({ data }) {
                 </Job>
               </div>
               {/* <div>
-                <div className="font-medium">Ph.D Mathematical Biology</div>
+                <div className="font-bold">Ph.D Mathematical Biology</div>
                 <div>University of Warwick UK</div>
               </div> */}
 
@@ -220,7 +220,7 @@ export default function IndexPage({ data }) {
             </div> */}
 
               {/* <div className="mt-2">
-                <div className="font-medium">B.Sc Computer Science</div>
+                <div className="font-bold">B.Sc Computer Science</div>
                 <div>University of Warwick UK</div>
                 <div>First-class honours</div>
               </div> */}
@@ -233,7 +233,7 @@ export default function IndexPage({ data }) {
 
               <Job date="2009" title="SIWN Best Paper Award" place="Leipzig" color="text-gray-800"/>
 
-              {/* <div className="font-medium">SIWN Best Paper Award</div>
+              {/* <div className="font-bold">SIWN Best Paper Award</div>
               <div>2009, Leipzig</div> */}
             </div>
           </div>
@@ -424,7 +424,7 @@ export default function IndexPage({ data }) {
             <Title title="References" />
             <div className="flex flex-col gap-y-1 mt-8 ">
               <div className="mb-4">
-                <div className="font-medium">Prof. Riccardo Dalla-Favera</div>
+                <div className="font-bold">Prof. Riccardo Dalla-Favera</div>
                 {/* <div>Institute for Cancer Genetics</div> */}
                 <div>Columbia University, New York</div>
                 <div>
@@ -434,7 +434,7 @@ export default function IndexPage({ data }) {
                 </div>
               </div>
               <div className="mb-4">
-                <div className="font-medium">Prof. Katia Basso</div>
+                <div className="font-bold">Prof. Katia Basso</div>
                 {/* <div>Institute for Cancer Genetics</div> */}
                 <div>Columbia University, New York</div>
                 <div>
@@ -447,7 +447,7 @@ export default function IndexPage({ data }) {
                 </div>
               </div>
               <div className="mb-4">
-                <div className="font-medium">Prof. Raul Rabandan</div>
+                <div className="font-bold">Prof. Raul Rabandan</div>
                 {/* <div>Department of Systems Biology</div> */}
                 <div>Columbia University, New York</div>
                 <div>

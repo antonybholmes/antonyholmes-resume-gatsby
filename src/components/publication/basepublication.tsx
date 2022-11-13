@@ -204,7 +204,7 @@ const BasePublication = ({
 
   return (
     <>
-      <div className="text-base font-semibold m-0">{`${
+      <div className="text-base font-bold m-0">{`${
         index !== -1 ? `${index}. ` : ""
       } ${publication.title}`}</div>
 

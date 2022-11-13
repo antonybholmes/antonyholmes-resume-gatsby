@@ -15,7 +15,7 @@ const Job = ({ date, title, place, className, color="text-blue-600", children }:
   <div className={cn("flex flex-col", className)}>
     <Row className="justify-between items-center">
       <div>
-        <h2 className={cn("font-medium text-base leading-tight", color)}>
+        <h2 className={cn("font-bold text-base leading-tight", color)}>
           {title}
         </h2>
         <Row className={cn("gap-x-2 items-center", color)}>
