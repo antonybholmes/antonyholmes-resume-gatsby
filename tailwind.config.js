@@ -8,6 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: [
+        "Figtree",
         "Plus Jakarta Sans",
         "Helvetica Neue",
         "Inter",
